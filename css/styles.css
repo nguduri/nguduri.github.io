@@ -6,7 +6,8 @@
    ink 16.4 · text 14.6 · muted 5.3 · accent 6.4
    ========================================================= */
 :root {
-  --bg: #ECECEA;
+  --bg: #EDEDEB;
+  --grid: rgba(17, 17, 17, .05);
   --box: #E1E1DE;          /* process cards, placeholders */
   --white: #FFFFFF;
   --ink: #111111;          /* headings */
@@ -15,17 +16,16 @@
   --line: #D3D3CF;
   --accent: #2645D6;       /* cobalt: the one accent */
   --accent-soft: #DCE3FB;
-  --sun: rgba(255, 205, 140, .45);
 
   --font: "Figtree", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
 
-  --fs-xs: .8125rem;    /* labels */
-  --fs-sm: .9375rem;    /* captions, meta */
-  --fs-base: 1.0625rem; /* body */
-  --fs-md: clamp(1.0625rem, 1rem + .25vw, 1.25rem);
-  --fs-lg: clamp(1.5rem, 1.2rem + 1vw, 2.125rem);   /* project titles */
-  --fs-xl: clamp(1.9rem, 1.4rem + 1.6vw, 2.6rem);
-  --fs-hero: clamp(2.1rem, 1.4rem + 2.6vw, 3.25rem);
+  --fs-xs: .75rem;      /* labels */
+  --fs-sm: .875rem;     /* captions, meta */
+  --fs-base: 1rem;      /* body */
+  --fs-md: clamp(1rem, .95rem + .2vw, 1.125rem);
+  --fs-lg: clamp(1.35rem, 1.1rem + .8vw, 1.85rem);  /* project titles */
+  --fs-xl: clamp(1.7rem, 1.3rem + 1.3vw, 2.3rem);
+  --fs-hero: clamp(1.9rem, 1.3rem + 2.2vw, 2.85rem);
 
   --gutter: clamp(20px, 5vw, 80px);
   --max: 1440px;
@@ -46,7 +46,11 @@ body {
   position: relative;
   min-height: 100vh;
   display: flex; flex-direction: column;
-  background: var(--bg);
+  background-color: var(--bg);
+  background-image:
+    linear-gradient(var(--grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+  background-size: 28px 28px;
   color: var(--text);
   font-family: var(--font);
   font-size: var(--fs-base);
@@ -54,25 +58,6 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 main { flex: 1; }
-
-/* paper grain */
-body::after {
-  content: "";
-  position: fixed; inset: 0; z-index: -1;
-  pointer-events: none;
-  opacity: .35; mix-blend-mode: multiply;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .18 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-}
-
-/* soft afternoon sun in the corner */
-body::before {
-  content: "";
-  position: fixed; z-index: -2;
-  top: -30vmax; right: -25vmax;
-  width: 70vmax; height: 70vmax; border-radius: 50%;
-  background: radial-gradient(circle, var(--sun), transparent 62%);
-  pointer-events: none;
-}
 
 img, svg { display: block; max-width: 100%; }
 a { color: inherit; }
@@ -257,7 +242,7 @@ ul[role="list"], ol[role="list"] { list-style: none; padding: 0; }
 
 .block { margin-top: clamp(56px, 8vw, 88px); display: grid; gap: 16px; }
 .block > .label { margin-bottom: -6px; }
-.block-title { font-size: clamp(1.25rem, 1.1rem + .5vw, 1.5rem); font-weight: 500; line-height: 1.3; letter-spacing: -.01em; color: var(--ink); text-wrap: balance; }
+.block-title { font-size: clamp(1.125rem, 1.05rem + .35vw, 1.3rem); font-weight: 500; line-height: 1.3; letter-spacing: -.01em; color: var(--ink); text-wrap: balance; }
 .block p, .block li { font-size: var(--fs-base); line-height: 1.7; }
 .block figure { margin: 0; }
 .block figcaption { margin-top: 8px; font-size: var(--fs-sm); color: var(--muted); }
@@ -360,7 +345,7 @@ ul[role="list"], ol[role="list"] { list-style: none; padding: 0; }
 .ticket__top { display: flex; justify-content: space-between; gap: 12px; margin-bottom: 14px; }
 .ticket__top span { font-size: .7rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
 .ticket__photo .ph, .ticket__photo img { aspect-ratio: 1; width: 100%; border-radius: 10px; object-fit: cover; }
-.ticket__name { margin-top: 18px; font-size: 2rem; font-weight: 600; line-height: 1.05; letter-spacing: -.03em; color: var(--ink); }
+.ticket__name { margin-top: 16px; font-size: 1.75rem; font-weight: 600; line-height: 1.05; letter-spacing: -.03em; color: var(--ink); }
 .ticket__role { margin-top: 4px; font-size: var(--fs-base); color: var(--accent); font-weight: 500; }
 
 /* perforated tear line with notches */
@@ -395,7 +380,7 @@ ul[role="list"], ol[role="list"] { list-style: none; padding: 0; }
 .hl { color: var(--accent); font-weight: 500; }
 
 .about-section { display: grid; gap: 20px; }
-.about-section > h2 { font-size: clamp(1.375rem, 1.2rem + .6vw, 1.75rem); font-weight: 500; letter-spacing: -.01em; color: var(--ink); }
+.about-section > h2 { font-size: clamp(1.25rem, 1.1rem + .5vw, 1.5rem); font-weight: 500; letter-spacing: -.01em; color: var(--ink); }
 
 .xp { display: grid; gap: 22px; }
 .xp li { display: grid; grid-template-columns: 40px minmax(0, 1fr); gap: 0 18px; }
