@@ -3,267 +3,149 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>[Project one name] · Your Name</title>
-  <meta name="description" content="[One-sentence summary of this case study for search and link previews.]">
-  <meta name="theme-color" content="#F5F1EA">
-
+  <title>[Project one] · Your Name</title>
+  <meta name="description" content="[One-sentence summary of this case study.]">
+  <meta name="theme-color" content="#ECECEA">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&display=swap">
   <link rel="stylesheet" href="../css/styles.css">
   <script src="../js/main.js" defer></script>
 </head>
-<!-- Project color: --cover (light) and --cover-deep (dark) -->
-<body class="case" style="--cover: var(--cobalt); --cover-deep: #1E33A8; --cover-fg: var(--cobalt-ink);">
+<body>
   <a class="skip-link" href="#main">Skip to content</a>
-  <div class="progress" aria-hidden="true"><span data-progress></span></div>
+  <!-- EDIT: your initials (also in the logo below) -->
+  <div class="watermark" aria-hidden="true">yn</div>
 
-  <header class="site-header is-scrolled">
-    <nav class="nav" aria-label="Primary">
-      <a class="wordmark" href="../index.html">Your Name<span class="wordmark__dot" aria-hidden="true">.</span></a>
+  <header class="site-header">
+    <nav class="nav wrap" aria-label="Primary">
+      <a class="logo" href="../index.html" aria-label="Your Name, home">yn</a>
       <ul class="nav__links" role="list">
-        <li><a class="nav__link" href="../index.html#work" aria-current="true">Work</a></li>
-        <li><a class="nav__link" href="../index.html#about">About</a></li>
-        <li class="nav__item--hide-sm"><a class="nav__link" href="../index.html#contact">Contact</a></li>
-        <li><a class="nav__link nav__link--pill" href="../assets/resume.pdf">Résumé<span class="sr-only"> (PDF)</span></a></li>
+        <li><a class="nav__link" href="../index.html" aria-current="page">Work</a></li>
+        <li><a class="nav__link" href="../experiments.html">Experiments</a></li>
+        <li><a class="nav__link" href="../about.html">About</a></li>
       </ul>
     </nav>
   </header>
 
   <main id="main">
-    <article class="case-study">
 
-      <!-- ============ 1. Intro ============ -->
-      <header class="case-hero container">
-        <a class="back-link" href="../index.html#work"><span aria-hidden="true">←</span> All work</a>
-        <p class="eyebrow">[Company] · 2026</p>
-        <h1 class="case-hero__title">[Outcome-led headline: what changed, and for whom]</h1>
-        <p class="case-hero__lede">[Two sentences max. The problem in plain words, what you did, and the result. A recruiter should be able to stop reading here and still get it.]</p>
+    <article class="case">
+      <a class="back fade-in" href="../index.html"><span aria-hidden="true">←</span> All work</a>
+      <header class="fade-in">
+        <!-- EDIT -->
+        <h1 class="case-title">[Company] – [Project one name]</h1>
+        <p class="case-sub">[One line: what you helped do, for whom.]</p>
+        <dl class="case-meta">
+          <div><dt class="label">Role</dt><dd>[UX Researcher &amp; Designer]</dd></div>
+          <div><dt class="label">Timeline</dt><dd>[2026]</dd></div>
+          <div><dt class="label">Tools</dt><dd>[Figma, Dovetail, Maze]</dd></div>
+        </dl>
       </header>
 
-      <div class="container">
-        <figure class="case-cover" aria-hidden="true">
-          <!-- EDIT: replace .mock with <img src="../assets/project-one-cover.jpg" alt="" class="case-cover__img"> -->
-          <div class="mock">
-            <div class="mock__top"><i></i><i></i><i></i></div>
-            <div class="mock__body mock__body--chart">
-              <span class="mock__line" style="--w:45%"></span>
-              <span class="mock__line" style="--w:70%"></span>
-              <div class="mock__bars"><i style="--h:40%"></i><i style="--h:65%"></i><i style="--h:50%"></i><i style="--h:85%"></i><i style="--h:70%"></i><i style="--h:100%"></i></div>
-            </div>
-          </div>
+      <div class="case-hero fade-in" style="--d:2; --cover:#4A78B5;" aria-hidden="true">
+        <!-- EDIT: replace with <img src="../assets/p1-cover.jpg" alt=""> -->
+        <div class="mock-center"><div class="mock-screen"><div class="mock-screen__bar"></div><div class="mock-screen__body"><i></i><i></i><i></i></div></div></div>
+      </div>
+
+      <h2 class="part-title">[Project or feature name] <span class="pill">[Season 2026]</span></h2>
+
+      <section class="block" aria-labelledby="p1-problem">
+        <p class="label">The problem</p>
+        <h3 class="block-title" id="p1-problem">[The problem in one line, e.g. “The tool existed, but only one person knew how to use it.”]</h3>
+        <p>[2–3 sentences. Who was struggling, with what, and what it cost. Add one number if you have it.]</p>
+        <figure>
+          <button class="zoom" type="button" data-zoom data-caption="[The original experience]" aria-label="Enlarge: [The original experience]">
+              <!-- EDIT: replace with <img src="../assets/…" alt="[The original experience]"> -->
+              <div class="ph" style="--ratio:16 / 10">Image · the before state</div>
+            </button>
+          <figcaption>[What this shows.]</figcaption>
         </figure>
+      </section>
 
-        <!-- ============ 2. Snapshot ============ -->
-        <dl class="case-meta">
-          <div><dt>Role</dt><dd>[UX Researcher &amp; Designer]</dd></div>
-          <div><dt>Team</dt><dd>[1 PM, 2 engineers, 1 designer]</dd></div>
-          <div><dt>Timeline</dt><dd>[Jan–Apr 2026 · 12 weeks]</dd></div>
-          <div><dt>Methods</dt><dd>[Interviews, usability tests, survey]</dd></div>
-          <div><dt>Tools</dt><dd>[Figma, Dovetail, Maze]</dd></div>
-        </dl>
+      <section class="block" aria-labelledby="p1-process">
+        <p class="label">My process</p>
+        <h3 class="block-title" id="p1-process">[How you started, e.g. “Discovery first, with almost nothing to build on.”]</h3>
+        <p>[One sentence on where most of your time went.]</p>
+        <ul class="boxes" role="list">
+          <li><h4>[Interviews]</h4><p>[Who you talked to, how many (n = 12), and what you were trying to learn.]</p></li>
+          <li><h4>[Usability testing]</h4><p>[What you tested and the baseline you measured.]</p></li>
+          <li><h4>[Journey mapping]</h4><p>[What the map revealed that no one had written down.]</p></li>
+          <li><h4>[Lo-fi iteration]</h4><p>[How you explored options quickly before committing.]</p></li>
+        </ul>
+      </section>
 
-        <!-- ============ 3. Results up front ============ -->
-        <section class="case-results" aria-labelledby="results-title">
-          <h2 class="card__label" id="results-title">Results</h2>
-          <ul class="metrics" role="list">
-            <li class="metric">
-              <strong class="metric__num">+XX%</strong>
-              <span class="metric__label">[Task success rate]</span>
-              <span class="metric__context">[From XX% to XX% across N test sessions]</span>
-            </li>
-            <li class="metric">
-              <strong class="metric__num">−XX%</strong>
-              <span class="metric__label">[Support tickets about X]</span>
-              <span class="metric__context">[In the 8 weeks after launch]</span>
-            </li>
-            <li class="metric">
-              <strong class="metric__num">N</strong>
-              <span class="metric__label">[Product decisions shaped]</span>
-              <span class="metric__context">[e.g. 3 roadmap items reprioritized]</span>
-            </li>
-          </ul>
-        </section>
-      </div>
+      <section class="block" aria-labelledby="p1-insights">
+        <p class="label">What I found</p>
+        <h3 class="block-title" id="p1-insights">[The question that shaped the design, e.g. “What were users actually missing?”]</h3>
+        <ol class="numbered" role="list">
+          <li><span class="num">01</span><h4>[Insight one]</h4><p>[What you learned and the evidence behind it.]</p></li>
+          <li><span class="num">02</span><h4>[Insight two]</h4><p>[What you learned and how it changed the direction.]</p></li>
+        </ol>
+      </section>
 
-      <div class="container case-body">
-        <nav class="toc" aria-label="On this page">
-          <p class="card__label">On this page</p>
-          <ol role="list">
-            <li><a href="#problem">Problem</a></li>
-            <li><a href="#role">My role</a></li>
-            <li><a href="#process">Process</a></li>
-            <li><a href="#impact">Impact</a></li>
-            <li><a href="#gallery">Gallery</a></li>
-            <li><a href="#reflection">Reflection</a></li>
-          </ol>
-        </nav>
-
-        <div class="case-content">
-
-          <!-- ============ Problem ============ -->
-          <section class="case-section" id="problem" aria-labelledby="problem-h">
-            <h2 class="case-section__title" id="problem-h">The problem</h2>
-            <p>[2–3 sentences. Who was struggling, with what, and what it cost. Use one number if you have it: drop-off rate, ticket volume, time on task.]</p>
-            <blockquote class="pull-quote">
-              <p>[A real participant quote that made the problem impossible to ignore.]</p>
-              <footer>[P7, small-business owner]</footer>
-            </blockquote>
-            <p>[Why the team cared now. What decision was waiting on this research?]</p>
-          </section>
-
-          <!-- ============ Role ============ -->
-          <section class="case-section" id="role" aria-labelledby="role-h">
-            <h2 class="case-section__title" id="role-h">My role</h2>
-            <p>[One sentence on where you sat on the team and who you reported to.]</p>
-            <div class="role-split">
-              <div class="role-split__col">
-                <h3 class="card__label">I owned</h3>
-                <ul>
-                  <li>[Study plan and recruiting]</li>
-                  <li>[12 moderated sessions]</li>
-                  <li>[Synthesis and the final readout]</li>
-                </ul>
-              </div>
-              <div class="role-split__col">
-                <h3 class="card__label">I partnered on</h3>
-                <ul>
-                  <li>[Prototype with the product designer]</li>
-                  <li>[Success metrics with the PM]</li>
-                </ul>
-              </div>
-            </div>
-          </section>
-
-          <!-- ============ Process ============ -->
-          <section class="case-section" id="process" aria-labelledby="process-h">
-            <h2 class="case-section__title" id="process-h">Process</h2>
-            <ol class="steps" role="list">
-              <li class="step">
-                <p class="step__label">Step 1 · Ask</p>
-                <h3 class="step__title">[What you set out to learn]</h3>
-                <p>[The research question, and why you picked this method over others.]</p>
-                <ul class="tags" role="list">
-                  <li class="tag tag--research"><span class="sr-only">Research: </span>[Interviews]</li>
-                  <li class="tag tag--plain">n = [12]</li>
-                </ul>
-              </li>
-              <li class="step">
-                <p class="step__label">Step 2 · Make sense</p>
-                <h3 class="step__title">[The pattern you found]</h3>
-                <p>[The 1–2 insights that changed the direction. Say what surprised you.]</p>
-                <figure class="figure">
-                  <div class="ph" style="--ratio: 16 / 9"><span>Image · affinity map or synthesis board</span></div>
-                  <figcaption>[Caption: what this shows, in one line.]</figcaption>
-                </figure>
-              </li>
-              <li class="step">
-                <p class="step__label">Step 3 · Make</p>
-                <h3 class="step__title">[What you designed from it]</h3>
-                <p>[The concept, and the one trade-off you had to make.]</p>
-                <ul class="tags" role="list">
-                  <li class="tag tag--design"><span class="sr-only">Design: </span>[Prototyping]</li>
-                  <li class="tag tag--plain">[3 concepts → 1]</li>
-                </ul>
-              </li>
-              <li class="step">
-                <p class="step__label">Step 4 · Measure</p>
-                <h3 class="step__title">[How you knew it worked]</h3>
-                <p>[The test, the baseline, and the result. Keep it to numbers people can check.]</p>
-                <ul class="tags" role="list">
-                  <li class="tag tag--research"><span class="sr-only">Research: </span>[Usability testing]</li>
-                  <li class="tag tag--plain">n = [8]</li>
-                </ul>
-              </li>
-            </ol>
-          </section>
-
-          <!-- ============ Impact ============ -->
-          <section class="case-section" id="impact" aria-labelledby="impact-h">
-            <h2 class="case-section__title" id="impact-h">Impact</h2>
-            <p>[What shipped, when, and to how many people.]</p>
-            <div class="compare">
-              <figure class="figure">
-                <span class="compare__tag">Before</span>
-                <div class="ph" style="--ratio: 4 / 3"><span>Image · old flow</span></div>
-                <figcaption>[What was broken.]</figcaption>
-              </figure>
-              <figure class="figure">
-                <span class="compare__tag compare__tag--after">After</span>
-                <div class="ph" style="--ratio: 4 / 3"><span>Image · new flow</span></div>
-                <figcaption>[What changed.]</figcaption>
-              </figure>
-            </div>
-            <ul class="outcomes" role="list">
-              <li>[Outcome 1: a metric or a decision, stated plainly.]</li>
-              <li>[Outcome 2: what the team does differently now.]</li>
-            </ul>
-          </section>
-
-          <!-- ============ Gallery ============ -->
-          <section class="case-section" id="gallery" aria-labelledby="gallery-h">
-            <h2 class="case-section__title" id="gallery-h">Gallery</h2>
-            <ul class="gallery" role="list">
-              <li class="gallery__item gallery__item--wide">
-                <button class="gallery__btn" type="button" data-lightbox aria-label="Enlarge image: [final screens]">
-                  <!-- EDIT: replace .ph with <img src="../assets/…" alt="[describe the image]"> -->
-                  <div class="ph" style="--ratio: 16 / 9"><span>Image · final screens</span></div>
-                </button>
-                <p class="gallery__cap">[Final screens]</p>
-              </li>
-              <li class="gallery__item">
-                <button class="gallery__btn" type="button" data-lightbox aria-label="Enlarge image: [testing session]">
-                  <div class="ph" style="--ratio: 4 / 3"><span>Image · testing session</span></div>
-                </button>
-                <p class="gallery__cap">[Testing session]</p>
-              </li>
-              <li class="gallery__item">
-                <button class="gallery__btn" type="button" data-lightbox aria-label="Enlarge image: [journey map]">
-                  <div class="ph" style="--ratio: 4 / 3"><span>Image · journey map</span></div>
-                </button>
-                <p class="gallery__cap">[Journey map]</p>
-              </li>
-            </ul>
-          </section>
-
-          <!-- ============ Reflection ============ -->
-          <section class="case-section" id="reflection" aria-labelledby="reflection-h">
-            <h2 class="case-section__title" id="reflection-h">Reflection</h2>
-            <div class="reflect">
-              <div>
-                <h3 class="card__label">What worked</h3>
-                <p>[One thing you'd repeat on the next project, and why.]</p>
-              </div>
-              <div>
-                <h3 class="card__label">What I'd change</h3>
-                <p>[One honest miss and what you learned from it.]</p>
-              </div>
-            </div>
-          </section>
+      <section class="block" aria-labelledby="p1-solution">
+        <p class="label">Solution</p>
+        <h3 class="block-title" id="p1-solution">[What you designed, in one line.]</h3>
+        <figure>
+          <button class="zoom" type="button" data-zoom data-caption="[Final design]" aria-label="Enlarge: [Final design]">
+              <!-- EDIT: replace with <img src="../assets/…" alt="[Final design]"> -->
+              <div class="ph" style="--ratio:16 / 10">Image · final design</div>
+            </button>
+        </figure>
+        <div class="features">
+          <div><h4>[Feature one]</h4><p>[What it does for the user, in one line.]</p></div>
+          <div><h4>[Feature two]</h4><p>[What it does for the user, in one line.]</p></div>
+          <div><h4>[Feature three]</h4><p>[What it does for the user, in one line.]</p></div>
+          <div><h4>[Feature four]</h4><p>[What it does for the user, in one line.]</p></div>
         </div>
-      </div>
+      </section>
 
-      <!-- ============ Next project ============ -->
-      <nav class="container next-project" aria-label="Next project">
-        <a class="next-card" href="project-two.html" style="--next-bg: var(--pistachio); --next-fg: var(--ink);">
-          <span class="card__label">Next project</span>
-          <span class="next-card__title">[Project two name]</span>
-          <span class="next-card__arrow" aria-hidden="true">→</span>
-        </a>
-      </nav>
+      <section class="block" aria-labelledby="p1-impact">
+        <p class="label">Impact</p>
+        <h3 class="block-title" id="p1-impact">[What changed after launch.]</h3>
+        <div class="stats">
+          <p class="stat"><strong>+XX%</strong><span>[metric, e.g. task success]</span></p>
+          <p class="stat"><strong>XX</strong><span>[metric, e.g. sessions run]</span></p>
+          <p class="stat"><strong>X×</strong><span>[metric, e.g. faster to insight]</span></p>
+        </div>
+      </section>
+
+      <hr class="rule">
+
+      <section class="block" aria-labelledby="p1-reflect">
+        <p class="label">Reflection</p>
+        <h3 class="sr-only" id="p1-reflect">Reflection</h3>
+        <ol class="numbered" role="list">
+          <li><span class="num">01</span><h4>[Lesson one, e.g. “Listen to the user.”]</h4><p>[2–3 sentences: what happened and what you’d repeat.]</p></li>
+          <li><span class="num">02</span><h4>[Lesson two]</h4><p>[2–3 sentences.]</p></li>
+          <li><span class="num">03</span><h4>[Lesson three]</h4><p>[2–3 sentences.]</p></li>
+        </ol>
+      </section>
+
+      <a class="next" href="project-two.html">
+        <span><span class="label">Next project</span><br><span class="next__title">[Project two]</span></span>
+        <span class="next__arrow" aria-hidden="true">→</span>
+      </a>
     </article>
   </main>
 
   <footer class="site-footer">
-    <div class="container footer__row">
-      <p>Questions about this project? <a href="mailto:you@example.com">you@example.com</a></p>
-      <p>© <span data-year>2026</span> Your Name</p>
-      <a class="footer__top" href="#main">Back to top <span aria-hidden="true">↑</span></a>
+    <div class="wrap footer__row">
+      <div>
+        <p class="footer__hello">Let’s connect! I’m always up for talking research.</p>
+        <p class="footer__updated">last updated <span data-updated>nov 2026</span></p>
+      </div>
+      <!-- EDIT: your profile links and email -->
+      <ul class="socials" role="list">
+        <li><a href="https://www.linkedin.com/in/your-handle/" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.75h4V21H3zM9.5 9.75h3.8v1.6h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5c0-1.2-.02-2.75-1.68-2.75-1.68 0-1.94 1.31-1.94 2.66V21h-4z"/></svg></a></li>
+        <li><a href="https://x.com/your-handle" aria-label="X (Twitter)"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M17.75 3h3.07l-6.7 7.66L22 21h-6.17l-4.83-6.32L5.47 21H2.4l7.17-8.2L2 3h6.33l4.37 5.78zm-1.08 16.17h1.7L7.4 4.74H5.58z"/></svg></a></li>
+        <li><a href="mailto:you@example.com" aria-label="Email you@example.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></a></li>
+      </ul>
     </div>
   </footer>
-
-  <dialog class="lightbox" data-lightbox-dialog aria-label="Enlarged image">
-    <button class="lightbox__close" type="button" data-close>Close <span aria-hidden="true">✕</span></button>
+  <dialog class="lightbox" data-lightbox aria-label="Enlarged image">
+    <button class="lightbox__close" type="button" data-close>Close</button>
     <div class="lightbox__content" data-lightbox-content></div>
   </dialog>
 </body>

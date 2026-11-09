@@ -3,366 +3,94 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Your Name · UX Researcher &amp; Product Designer</title>
-  <meta name="description" content="Your Name is a UX researcher and product designer who runs the study, makes sense of it, and prototypes the answer.">
-  <meta name="theme-color" content="#F5F1EA">
-
+  <title>Your Name · UX Researcher & Product Designer</title>
+  <meta name="description" content="Your Name is a UX researcher and product designer. Selected work and case studies.">
+  <meta name="theme-color" content="#ECECEA">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&display=swap">
   <link rel="stylesheet" href="css/styles.css">
   <script src="js/main.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
+  <!-- EDIT: your initials (also in the logo below) -->
+  <div class="watermark" aria-hidden="true">yn</div>
 
-  <header class="site-header" data-header>
-    <nav class="nav" aria-label="Primary">
-      <!-- EDIT: your name -->
-      <a class="wordmark" href="#top">Your Name<span class="wordmark__dot" aria-hidden="true">.</span></a>
+  <header class="site-header">
+    <nav class="nav wrap" aria-label="Primary">
+      <a class="logo" href="index.html" aria-label="Your Name, home">yn</a>
       <ul class="nav__links" role="list">
-        <li><a class="nav__link" href="#work">Work</a></li>
-        <li><a class="nav__link" href="#about">About</a></li>
-        <li class="nav__item--hide-sm"><a class="nav__link" href="#contact">Contact</a></li>
-        <!-- EDIT: drop your PDF into /assets -->
-        <li><a class="nav__link nav__link--pill" href="assets/resume.pdf">Résumé<span class="sr-only"> (PDF)</span></a></li>
+        <li><a class="nav__link" href="index.html" aria-current="page">Work</a></li>
+        <li><a class="nav__link" href="experiments.html">Experiments</a></li>
+        <li><a class="nav__link" href="about.html">About</a></li>
       </ul>
     </nav>
   </header>
 
   <main id="main">
-    <!-- ============ HERO: collage ============ -->
-    <section class="hero" id="top" aria-labelledby="hero-title">
-      <div class="hero__sentinel" data-header-sentinel aria-hidden="true"></div>
 
-      <div class="hero__stage" data-stage>
-
-        <!-- Intro card (holds the H1 + primary CTA) -->
-        <div class="card card--intro" data-card style="--i:0">
-          <button class="card__grip" type="button" data-grip aria-label="Move intro card. Use arrow keys; hold Shift to move faster."></button>
-          <p class="eyebrow">UX Researcher <span class="eyebrow__plus" aria-hidden="true">+</span><span class="sr-only">and</span> Product Designer</p>
-          <h1 class="hero__title" id="hero-title">I find out what people need, <em>then design it.</em></h1>
-          <p class="hero__lede">I run the study, make sense of what I hear, and prototype the answer, so insights don’t die in a slide deck.</p>
-          <div class="hero__actions">
-            <a class="btn btn--primary" href="#work">See case studies <span class="btn__icon" aria-hidden="true">↓</span></a>
-            <a class="link-arrow" href="#about">About me <span aria-hidden="true">→</span></a>
-          </div>
-        </div>
-
-        <!-- Portrait (decorative placeholder until you add a photo) -->
-        <figure class="card card--photo" data-card style="--i:1">
-          <button class="card__grip" type="button" data-grip aria-label="Move photo card. Use arrow keys; hold Shift to move faster."></button>
-          <!-- EDIT: replace this div with <img src="assets/portrait.jpg" alt="Portrait of Your Name" width="400" height="500"> -->
-          <div class="photo__frame photo__frame--placeholder"><span>your photo</span></div>
-          <figcaption class="photo__caption">[Place], ’26</figcaption>
-        </figure>
-
-        <!-- Now card -->
-        <div class="card card--now" data-card style="--i:2">
-          <button class="card__grip" type="button" data-grip aria-label="Move ‘Now’ card. Use arrow keys; hold Shift to move faster."></button>
-          <p class="card__label">Now</p>
-          <!-- EDIT -->
-          <p class="now__role">[Role] at [Company]</p>
-          <p class="now__note">Open to full-time UX research &amp; product design roles from [Month Year].</p>
-          <p class="status"><span class="status__dot" aria-hidden="true"></span>Available to chat</p>
-        </div>
-
-        <!-- Method card -->
-        <div class="card card--method" data-card style="--i:3">
-          <button class="card__grip" type="button" data-grip aria-label="Move ‘How I work’ card. Use arrow keys; hold Shift to move faster."></button>
-          <p class="card__label">How I work</p>
-          <ol class="method" role="list">
-            <li class="method__item"><span class="method__n">01</span><span class="method__verb">Ask</span><span class="method__desc">Interviews, usability tests, surveys</span></li>
-            <li class="method__item"><span class="method__n">02</span><span class="method__verb">Make</span><span class="method__desc">Flows, prototypes, UI in Figma</span></li>
-            <li class="method__item"><span class="method__n">03</span><span class="method__verb">Measure</span><span class="method__desc">The numbers that show it worked</span></li>
-          </ol>
-        </div>
-
-        <!-- Sticker: drag hint + one-click alternative to dragging -->
-        <div class="sticker" style="--i:4">
-          <p class="sticker__text">psst, the cards move</p>
-          <button class="sticker__btn" type="button" data-tidy>Tidy up <span aria-hidden="true">↺</span></button>
-        </div>
-      </div>
-
-      <svg class="hero__horizon" viewBox="0 0 1440 200" preserveAspectRatio="none" aria-hidden="true" focusable="false">
-        <path class="horizon__far" d="M0 118 C 160 70 300 66 470 98 S 820 152 1010 96 S 1310 58 1440 104 V200 H0 Z"/>
-        <path class="horizon__near" d="M0 162 C 240 124 430 150 660 142 S 1110 112 1440 150 V200 H0 Z"/>
-      </svg>
-    </section>
-
-    <!-- ============ SELECTED WORK ============ -->
-    <section class="section work" id="work" aria-labelledby="work-title">
-      <div class="container">
-        <header class="section__head">
-          <div>
-            <p class="card__label">Selected work <span class="section__count">/ 03</span></p>
-            <h2 class="section__title" id="work-title">Three projects, from first question to shipped.</h2>
-          </div>
-          <div class="section__aside">
-            <p class="section__intro">Each case study covers what I asked, what we built from it, and what changed after.</p>
-            <p class="legend" aria-hidden="true">
-              <span class="legend__item legend__item--research">Research</span>
-              <span class="legend__item legend__item--design">Design</span>
-            </p>
-          </div>
-        </header>
-
-        <ul class="projects" role="list">
-          <!-- ===== Project 1 (featured) ===== -->
-          <li class="project project--feature" style="--cover: var(--cobalt); --cover-deep: #1E33A8;">
-            <div class="project__cover" aria-hidden="true">
-              <!-- EDIT: replace .mock with <img src="assets/project-one-cover.jpg" alt="" class="project__img"> -->
-              <div class="mock">
-                <div class="mock__top"><i></i><i></i><i></i></div>
-                <div class="mock__body mock__body--chart">
-                  <span class="mock__line" style="--w:45%"></span>
-                  <span class="mock__line" style="--w:70%"></span>
-                  <div class="mock__bars"><i style="--h:40%"></i><i style="--h:65%"></i><i style="--h:50%"></i><i style="--h:85%"></i><i style="--h:70%"></i><i style="--h:100%"></i></div>
-                </div>
-              </div>
-            </div>
-            <div class="project__body">
-              <p class="project__meta"><span>[Company] · [Your role]</span><span>2026</span></p>
-              <h3 class="project__title"><a class="project__link" href="work/project-one.html">[Project one name]</a></h3>
-              <p class="project__summary">One sentence: who was stuck on what, and what you shipped because of it.</p>
-              <p class="project__impact"><span class="impact__label">Impact</span><strong class="impact__num">+XX%</strong><span class="impact__what">[metric, e.g. task success]</span></p>
-              <ul class="tags" role="list">
-                <li class="tag tag--research"><span class="sr-only">Research: </span>Usability testing</li>
-                <li class="tag tag--research"><span class="sr-only">Research: </span>Survey</li>
-                <li class="tag tag--design"><span class="sr-only">Design: </span>Prototyping</li>
-              </ul>
-              <span class="project__cta" aria-hidden="true">Read case study <span class="project__arrow">→</span></span>
-            </div>
-          </li>
-
-          <!-- ===== Project 2 ===== -->
-          <li class="project" style="--cover: var(--pistachio); --cover-deep: #4F7A3A;">
-            <div class="project__cover" aria-hidden="true">
-              <!-- EDIT: replace .mock with an <img> -->
-              <div class="mock">
-                <div class="mock__top"><i></i><i></i><i></i></div>
-                <div class="mock__body mock__body--flow">
-                  <span class="flow__node"></span><span class="flow__edge"></span>
-                  <span class="flow__node flow__node--on"></span><span class="flow__edge"></span>
-                  <span class="flow__node"></span>
-                </div>
-              </div>
-            </div>
-            <div class="project__body">
-              <p class="project__meta"><span>[Company] · [Your role]</span><span>2025</span></p>
-              <h3 class="project__title"><a class="project__link" href="work/project-two.html">[Project two name]</a></h3>
-              <p class="project__summary">One sentence: the problem, and the decision your work changed.</p>
-              <p class="project__impact"><span class="impact__label">Impact</span><strong class="impact__num">XX</strong><span class="impact__what">[metric, e.g. interviews → 3 flows redesigned]</span></p>
-              <ul class="tags" role="list">
-                <li class="tag tag--research"><span class="sr-only">Research: </span>Interviews</li>
-                <li class="tag tag--research"><span class="sr-only">Research: </span>Journey mapping</li>
-                <li class="tag tag--design"><span class="sr-only">Design: </span>UI design</li>
-              </ul>
-              <span class="project__cta" aria-hidden="true">Read case study <span class="project__arrow">→</span></span>
-            </div>
-          </li>
-
-          <!-- ===== Project 3 ===== -->
-          <li class="project" style="--cover: var(--butter); --cover-deep: #B5860A;">
-            <div class="project__cover" aria-hidden="true">
-              <!-- EDIT: replace .mock with an <img> -->
-              <div class="mock">
-                <div class="mock__top"><i></i><i></i><i></i></div>
-                <div class="mock__body mock__body--notes">
-                  <i></i><i></i><i></i><i></i><i></i><i></i>
-                </div>
-              </div>
-            </div>
-            <div class="project__body">
-              <p class="project__meta"><span>[Company] · [Your role]</span><span>2024</span></p>
-              <h3 class="project__title"><a class="project__link" href="work/project-three.html">[Project three name]</a></h3>
-              <p class="project__summary">One sentence: what you studied, and what the team does differently now.</p>
-              <p class="project__impact"><span class="impact__label">Impact</span><strong class="impact__num">X×</strong><span class="impact__what">[metric, e.g. faster onboarding]</span></p>
-              <ul class="tags" role="list">
-                <li class="tag tag--research"><span class="sr-only">Research: </span>Diary study</li>
-                <li class="tag tag--research"><span class="sr-only">Research: </span>Affinity mapping</li>
-                <li class="tag tag--design"><span class="sr-only">Design: </span>Design system</li>
-              </ul>
-              <span class="project__cta" aria-hidden="true">Read case study <span class="project__arrow">→</span></span>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- ============ ABOUT + EXPERIENCE ============ -->
-    <section class="section about" id="about" aria-labelledby="about-title">
-      <div class="container">
-        <header class="section__head">
-          <div>
-            <p class="card__label">About</p>
-            <!-- EDIT -->
-            <h2 class="section__title" id="about-title">I ask the questions, then I sketch the answers.</h2>
-          </div>
-        </header>
-
-        <div class="about-grid">
-          <!-- Left: photo + bio -->
-          <div class="about-intro">
-            <figure class="about-photo">
-              <!-- EDIT: replace .photo__frame div with <img src="assets/portrait.jpg" alt="Your Name smiling, outdoors" width="400" height="500"> -->
-              <div class="photo__frame photo__frame--placeholder"><span>your photo</span></div>
-              <figcaption class="photo__caption">[Place], ’26</figcaption>
-            </figure>
-
-            <div class="about-bio">
-              <p>[2–3 sentences. Where you are now, what kind of problems you like, and why you work across research and design. Write it the way you'd say it to someone at a meetup.]</p>
-              <p>[1–2 sentences. Your background or path in, e.g. what you studied and the moment you switched into UX.]</p>
-              <p class="about-off"><span class="card__label">Off the clock</span>[Three real things, e.g. film photography, bouldering, bad puns.]</p>
-              <a class="btn btn--primary" href="assets/resume.pdf">Download résumé<span class="sr-only"> (PDF)</span> <span class="btn__icon" aria-hidden="true">↓</span></a>
-            </div>
-          </div>
-
-          <!-- Right: experience, education, skills -->
-          <div class="about-detail">
-            <div class="exp-head">
-              <h3 class="card__label" id="exp-title">Experience</h3>
-              <div class="filter" role="group" aria-label="Filter experience by type">
-                <button class="filter__btn" type="button" data-filter="all" aria-pressed="true">All</button>
-                <button class="filter__btn" type="button" data-filter="research" aria-pressed="false">Research</button>
-                <button class="filter__btn" type="button" data-filter="design" aria-pressed="false">Design</button>
-              </div>
-            </div>
-
-            <!-- EDIT: one <li> per role. data-kind = "research", "design", or "research design" -->
-            <ol class="exp" role="list" aria-labelledby="exp-title">
-              <li class="exp__item" data-kind="research design">
-                <p class="exp__years">2026 – now</p>
-                <div class="exp__main">
-                  <h4 class="exp__role">[Role title]</h4>
-                  <p class="exp__org">[Company]</p>
-                  <p class="exp__desc">[One line: what you own, with a number if you have one.]</p>
-                </div>
-                <ul class="exp__tags tags" role="list">
-                  <li class="tag tag--research">Research</li>
-                  <li class="tag tag--design">Design</li>
-                </ul>
-              </li>
-              <li class="exp__item" data-kind="research">
-                <p class="exp__years">2025</p>
-                <div class="exp__main">
-                  <h4 class="exp__role">[Research intern]</h4>
-                  <p class="exp__org">[Company]</p>
-                  <p class="exp__desc">[One line: the study you ran and what it changed.]</p>
-                </div>
-                <ul class="exp__tags tags" role="list">
-                  <li class="tag tag--research">Research</li>
-                </ul>
-              </li>
-              <li class="exp__item" data-kind="design">
-                <p class="exp__years">2024</p>
-                <div class="exp__main">
-                  <h4 class="exp__role">[Product design intern]</h4>
-                  <p class="exp__org">[Company]</p>
-                  <p class="exp__desc">[One line: what you designed and where it shipped.]</p>
-                </div>
-                <ul class="exp__tags tags" role="list">
-                  <li class="tag tag--design">Design</li>
-                </ul>
-              </li>
-              <li class="exp__item" data-kind="research design">
-                <p class="exp__years">2022 – 2024</p>
-                <div class="exp__main">
-                  <h4 class="exp__role">[Lab or student role]</h4>
-                  <p class="exp__org">[University lab or club]</p>
-                  <p class="exp__desc">[One line: the project and your part in it.]</p>
-                </div>
-                <ul class="exp__tags tags" role="list">
-                  <li class="tag tag--research">Research</li>
-                  <li class="tag tag--design">Design</li>
-                </ul>
-              </li>
-            </ol>
-            <p class="sr-only" aria-live="polite" data-filter-status></p>
-
-            <div class="about-sub">
-              <h3 class="card__label">Education</h3>
-              <ul class="edu" role="list">
-                <li class="edu__item"><span class="exp__years">[2026]</span><span><strong>[Degree, e.g. M.S. Human Centered Design &amp; Engineering]</strong><br>[University]</span></li>
-                <li class="edu__item"><span class="exp__years">[2024]</span><span><strong>[Degree]</strong><br>[University]</span></li>
-              </ul>
-            </div>
-
-            <div class="about-sub skills">
-              <div class="skills__group">
-                <h3 class="card__label">Research</h3>
-                <ul class="tags" role="list">
-                  <li class="tag tag--research">Interviews</li>
-                  <li class="tag tag--research">Usability testing</li>
-                  <li class="tag tag--research">Surveys</li>
-                  <li class="tag tag--research">Diary studies</li>
-                  <li class="tag tag--research">Benchmarking</li>
-                </ul>
-              </div>
-              <div class="skills__group">
-                <h3 class="card__label">Design</h3>
-                <ul class="tags" role="list">
-                  <li class="tag tag--design">Interaction design</li>
-                  <li class="tag tag--design">Prototyping</li>
-                  <li class="tag tag--design">Journey mapping</li>
-                  <li class="tag tag--design">Design systems</li>
-                </ul>
-              </div>
-              <div class="skills__group">
-                <h3 class="card__label">Tools</h3>
-                <ul class="tags" role="list">
-                  <li class="tag tag--plain">Figma</li>
-                  <li class="tag tag--plain">Dovetail</li>
-                  <li class="tag tag--plain">Maze</li>
-                  <li class="tag tag--plain">Qualtrics</li>
-                  <li class="tag tag--plain">HTML/CSS</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ CONTACT ============ -->
-    <section class="contact" id="contact" aria-labelledby="contact-title">
-      <svg class="contact__horizon" viewBox="0 0 1440 140" preserveAspectRatio="none" aria-hidden="true" focusable="false">
-        <path class="contact__hill" d="M0 0 H1440 V96 C 1190 140 960 62 700 102 S 230 148 0 98 Z"/>
-        <path class="contact__sky" d="M0 0 H1440 V56 C 1200 96 980 24 720 60 S 260 104 0 60 Z"/>
-      </svg>
-
-      <div class="container contact__inner">
-        <p class="card__label">Contact</p>
+    <div class="wrap">
+      <section class="page-intro fade-in" aria-labelledby="intro-title">
         <!-- EDIT -->
-        <h2 class="contact__title" id="contact-title">Got a question worth <em>asking users?</em> Let’s talk.</h2>
+        <h1 class="page-title" id="intro-title">I’m [Your Name]! Researching what people need and designing what ships.</h1>
+        <p class="page-sub">UX researcher &amp; product designer @ [Company], prev. [Company]</p>
+      </section>
 
-        <div class="contact__actions">
-        <div class="contact__email">
-          <!-- EDIT: your email, in all three places on this line and the button -->
-          <a class="contact__address" href="mailto:you@example.com" data-copy-source>you@example.com</a>
-          <button class="copy-btn" type="button" data-copy="you@example.com">Copy email</button>
-          <span class="sr-only" role="status" data-copy-status></span>
-        </div>
-
-        <!-- EDIT: your profile links -->
-        <ul class="contact__links" role="list">
-          <li><a class="contact__link" href="https://www.linkedin.com/in/your-handle/" rel="me">LinkedIn <span aria-hidden="true">↗</span></a></li>
-          <li><a class="contact__link" href="https://medium.com/@your-handle" rel="me">Writing <span aria-hidden="true">↗</span></a></li>
-          <li><a class="contact__link" href="assets/resume.pdf">Résumé<span class="sr-only"> (PDF)</span> <span aria-hidden="true">↓</span></a></li>
-        </ul>
-
-        <p class="contact__note">Based in [City] · Open to [remote / hybrid] roles · I reply within two days</p>
-        </div>
-      </div>
-    </section>
+      <h2 class="sr-only">Selected work</h2>
+      <ul class="work-grid" role="list">
+        <li class="fade-in" style="--d:1">
+          <a class="work-card" href="work/project-one.html">
+            <div class="work-card__cover" style="--cover:#0E1628" aria-hidden="true">
+              <!-- EDIT: replace with <img src="assets/…" alt=""> -->
+              <div class="mock-center"><div class="mock-screen"><div class="mock-screen__bar"></div><div class="mock-screen__body"><i></i><i></i><i></i></div></div></div>
+            </div>
+            <div class="work-card__meta">
+              <h2 class="work-card__title">[Project one]</h2>
+              <span class="pill"><span class="sr-only">Year: </span>2026</span>
+            </div>
+          </a>
+        </li>
+        <li class="fade-in" style="--d:2">
+          <a class="work-card" href="work/project-two.html">
+            <div class="work-card__cover cover-grid"  aria-hidden="true">
+              <!-- EDIT: replace with <img src="assets/…" alt=""> -->
+              <div class="mock-center"><div class="mock-mark"></div></div>
+            </div>
+            <div class="work-card__meta">
+              <h2 class="work-card__title">[Project two]</h2>
+              <span class="pill"><span class="sr-only">Year: </span>2025</span>
+            </div>
+          </a>
+        </li>
+        <li class="fade-in" style="--d:3">
+          <a class="work-card" href="work/project-three.html">
+            <div class="work-card__cover" style="--cover:#0F7A78" aria-hidden="true">
+              <!-- EDIT: replace with <img src="assets/…" alt=""> -->
+              <div class="mock-center"><div class="mock-phone"><i></i><i></i><i></i></div></div>
+            </div>
+            <div class="work-card__meta">
+              <h2 class="work-card__title">[Project three]</h2>
+              <span class="pill"><span class="sr-only">Year: </span>2023–2024</span>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </div>
   </main>
 
   <footer class="site-footer">
-    <div class="container footer__row">
-      <p>© <span data-year>2026</span> Your Name</p>
-      <p>Designed and built by hand. No templates.</p>
-      <a class="footer__top" href="#top">Back to top <span aria-hidden="true">↑</span></a>
+    <div class="wrap footer__row">
+      <div>
+        <p class="footer__hello">Let’s connect! I’m always up for talking research.</p>
+        <p class="footer__updated">last updated <span data-updated>nov 2026</span></p>
+      </div>
+      <!-- EDIT: your profile links and email -->
+      <ul class="socials" role="list">
+        <li><a href="https://www.linkedin.com/in/your-handle/" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.75h4V21H3zM9.5 9.75h3.8v1.6h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5c0-1.2-.02-2.75-1.68-2.75-1.68 0-1.94 1.31-1.94 2.66V21h-4z"/></svg></a></li>
+        <li><a href="https://x.com/your-handle" aria-label="X (Twitter)"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M17.75 3h3.07l-6.7 7.66L22 21h-6.17l-4.83-6.32L5.47 21H2.4l7.17-8.2L2 3h6.33l4.37 5.78zm-1.08 16.17h1.7L7.4 4.74H5.58z"/></svg></a></li>
+        <li><a href="mailto:you@example.com" aria-label="Email you@example.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></a></li>
+      </ul>
     </div>
   </footer>
 </body>

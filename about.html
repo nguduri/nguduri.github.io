@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>About · Your Name</title>
+  <meta name="description" content="About Your Name: background, experience and education.">
+  <meta name="theme-color" content="#ECECEA">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <!-- EDIT: your initials (also in the logo below) -->
+  <div class="watermark" aria-hidden="true">yn</div>
+
+  <header class="site-header">
+    <nav class="nav wrap" aria-label="Primary">
+      <a class="logo" href="index.html" aria-label="Your Name, home">yn</a>
+      <ul class="nav__links" role="list">
+        <li><a class="nav__link" href="index.html">Work</a></li>
+        <li><a class="nav__link" href="experiments.html">Experiments</a></li>
+        <li><a class="nav__link" href="about.html" aria-current="page">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+
+    <div class="wrap">
+      <div class="about">
+        <section class="about-top" aria-labelledby="hi">
+          <div class="badge-wrap fade-in">
+            <div class="badge" data-badge>
+              <div class="badge__top"><span>[School] ★ [Program]</span><span>[City]</span></div>
+              <div class="badge__photo">
+                <!-- EDIT: replace with <img src="assets/portrait.jpg" alt="Your Name smiling"> -->
+                <div class="ph" aria-hidden="true">your photo</div>
+              </div>
+              <p class="badge__name">[Your Name]</p>
+              <p class="badge__role">UX Researcher @ [Company]</p>
+              <div class="badge__foot">
+                <span>say hi</span>
+                <a class="icon-btn" href="mailto:you@example.com" aria-label="Email you@example.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="about-bio fade-in" style="--d:2">
+            <h1 id="hi">Hey, I’m [Your Name]</h1>
+            <!-- EDIT -->
+            <p>[Where you’re from and where you studied. One or two sentences.]</p>
+            <p>[What pulled you into UX, and why you do both research and design. End with the thread that ties it together:] <span class="hl">[your one-line reason]</span>.</p>
+            <p>[Off the clock: three specific things you do, e.g. a café you keep going back to, a hobby, something you collect.]</p>
+          </div>
+        </section>
+
+        <section class="about-section" aria-labelledby="xp-h">
+          <h2 id="xp-h">Experience</h2>
+          <ul class="xp" role="list">
+          <li>
+            <!-- EDIT: replace text with <img src="assets/logo-….png" alt=""> -->
+            <span class="xp__logo" aria-hidden="true">[Co]</span>
+            <div>
+              <div class="xp__head">
+                <h3 class="xp__org">[Company] <span>[UX Researcher]</span></h3>
+                <p class="xp__date">[Jul 2026 – Present]</p>
+              </div>
+              <p class="xp__desc">[One line: what you own, with a number if you have one.]</p>
+            </div>
+          </li>
+          <li>
+            <!-- EDIT: replace text with <img src="assets/logo-….png" alt=""> -->
+            <span class="xp__logo" aria-hidden="true">[Co]</span>
+            <div>
+              <div class="xp__head">
+                <h3 class="xp__org">[Company] <span>[Product Design Intern]</span></h3>
+                <p class="xp__date">[Summer 2025]</p>
+              </div>
+              <p class="xp__desc">[One line: what you redesigned and the result, e.g. page views up 2×.]</p>
+            </div>
+          </li>
+          <li>
+            <!-- EDIT: replace text with <img src="assets/logo-….png" alt=""> -->
+            <span class="xp__logo" aria-hidden="true">[Co]</span>
+            <div>
+              <div class="xp__head">
+                <h3 class="xp__org">[Company] <span>[UX Research Intern]</span></h3>
+                <p class="xp__date">[Summer 2024]</p>
+              </div>
+              <p class="xp__desc">[One line: the study you ran and the decision it changed.]</p>
+            </div>
+          </li>
+          <li>
+            <!-- EDIT: replace text with <img src="assets/logo-….png" alt=""> -->
+            <span class="xp__logo" aria-hidden="true">[Co]</span>
+            <div>
+              <div class="xp__head">
+                <h3 class="xp__org">[Lab or club] <span>[Research Assistant]</span></h3>
+                <p class="xp__date">[2022 – 2024]</p>
+              </div>
+              <p class="xp__desc">[One line: the project and your part in it.]</p>
+            </div>
+          </li>
+          </ul>
+        </section>
+
+        <section class="about-section" aria-labelledby="edu-h">
+          <h2 id="edu-h">Education</h2>
+          <ul class="xp" role="list">
+            <li>
+              <span class="xp__logo" aria-hidden="true">[U]</span>
+              <div>
+                <div class="xp__head">
+                  <h3 class="xp__org">[University] <span>[Degree / major]</span></h3>
+                  <p class="xp__date">[Class of 2026]</p>
+                </div>
+                <p class="xp__desc">[Program · honors or scholarship]</p>
+              </div>
+            </li>
+          </ul>
+        </section>
+
+        <!-- OPTIONAL: delete this section if you don't want it -->
+        <section class="about-section" aria-labelledby="rep-h">
+          <h2 id="rep-h">On repeat this month</h2>
+          <ol class="repeat" role="list">
+          <li>
+            <div class="ph" aria-hidden="true">cover</div>
+            <p class="repeat__title"><span>1</span>[Song title]</p>
+            <p class="repeat__artist">[Artist]</p>
+          </li>
+          <li>
+            <div class="ph" aria-hidden="true">cover</div>
+            <p class="repeat__title"><span>2</span>[Song title]</p>
+            <p class="repeat__artist">[Artist]</p>
+          </li>
+          <li>
+            <div class="ph" aria-hidden="true">cover</div>
+            <p class="repeat__title"><span>3</span>[Song title]</p>
+            <p class="repeat__artist">[Artist]</p>
+          </li>
+          <li>
+            <div class="ph" aria-hidden="true">cover</div>
+            <p class="repeat__title"><span>4</span>[Song title]</p>
+            <p class="repeat__artist">[Artist]</p>
+          </li>
+          <li>
+            <div class="ph" aria-hidden="true">cover</div>
+            <p class="repeat__title"><span>5</span>[Song title]</p>
+            <p class="repeat__artist">[Artist]</p>
+          </li>
+          </ol>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer__row">
+      <div>
+        <p class="footer__hello">Let’s connect! I’m always up for talking research.</p>
+        <p class="footer__updated">last updated <span data-updated>nov 2026</span></p>
+      </div>
+      <!-- EDIT: your profile links and email -->
+      <ul class="socials" role="list">
+        <li><a href="https://www.linkedin.com/in/your-handle/" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.75h4V21H3zM9.5 9.75h3.8v1.6h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5c0-1.2-.02-2.75-1.68-2.75-1.68 0-1.94 1.31-1.94 2.66V21h-4z"/></svg></a></li>
+        <li><a href="https://x.com/your-handle" aria-label="X (Twitter)"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M17.75 3h3.07l-6.7 7.66L22 21h-6.17l-4.83-6.32L5.47 21H2.4l7.17-8.2L2 3h6.33l4.37 5.78zm-1.08 16.17h1.7L7.4 4.74H5.58z"/></svg></a></li>
+        <li><a href="mailto:you@example.com" aria-label="Email you@example.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></a></li>
+      </ul>
+    </div>
+  </footer>
+</body>
+</html>
