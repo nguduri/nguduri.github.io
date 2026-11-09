@@ -13,7 +13,7 @@
   const badge = document.querySelector('[data-badge]');
   if (!badge || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
   if (!matchMedia('(hover: hover)').matches) return;
-  const rest = '-3deg';
+  const rest = '-2deg';
   badge.addEventListener('pointermove', (e) => {
     const r = badge.getBoundingClientRect();
     const x = (e.clientX - r.left) / r.width - 0.5;   // -0.5 … 0.5
