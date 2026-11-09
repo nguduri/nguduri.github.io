@@ -149,7 +149,7 @@ ul[role="list"], ol[role="list"] { list-style: none; padding: 0; }
 .work-grid {
   display: grid;
   gap: clamp(40px, 5vw, 64px) clamp(20px, 2.4vw, 32px);
-  padding-bottom: clamp(64px, 10vw, 128px);
+  padding-bottom: clamp(104px, 14vw, 200px);
 }
 @media (min-width: 760px) {
   .work-grid { grid-template-columns: 1fr 1fr; }
