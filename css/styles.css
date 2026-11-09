@@ -7,7 +7,7 @@
    ========================================================= */
 :root {
   --bg: #EDEDEB;
-  --grid: rgba(17, 17, 17, .05);
+  --grid: rgba(17, 17, 17, .03);
   --box: #E1E1DE;          /* process cards, placeholders */
   --white: #FFFFFF;
   --ink: #111111;          /* headings */
@@ -23,9 +23,9 @@
   --fs-sm: .875rem;     /* captions, meta */
   --fs-base: 1rem;      /* body */
   --fs-md: clamp(1rem, .95rem + .2vw, 1.125rem);
-  --fs-lg: clamp(1.35rem, 1.1rem + .8vw, 1.85rem);  /* project titles */
+  --fs-lg: clamp(1.2rem, 1.05rem + .5vw, 1.5rem);  /* project titles */
   --fs-xl: clamp(1.7rem, 1.3rem + 1.3vw, 2.3rem);
-  --fs-hero: clamp(1.9rem, 1.3rem + 2.2vw, 2.85rem);
+  --fs-hero: clamp(1.6rem, 1.2rem + 1.5vw, 2.25rem);
 
   --gutter: clamp(20px, 5vw, 80px);
   --max: 1440px;
@@ -50,7 +50,7 @@ body {
   background-image:
     linear-gradient(var(--grid) 1px, transparent 1px),
     linear-gradient(90deg, var(--grid) 1px, transparent 1px);
-  background-size: 28px 28px;
+  background-size: 18px 18px;
   color: var(--text);
   font-family: var(--font);
   font-size: var(--fs-base);
