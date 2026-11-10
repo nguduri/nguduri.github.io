@@ -41,8 +41,8 @@
         </dl>
       </header>
 
-      <button class="case-hero zoom fade-in" style="--d:2; --cover:#111B47; aspect-ratio:1600 / 996;" type="button" data-zoom data-caption="Line Check Solver: the Reservations page" aria-label="Enlarge: Line Check Solver Reservations page">
-        <img src="../assets/southwest/reservations.webp" alt="Line Check Solver Reservations page: a sortable table of a pilot’s reserved, canceled and completed Line Checks with date, report time, total checks, duty time, ground time and trip-for-pay, plus a yellow Create New Line Check button." width="1600" height="996">
+      <button class="case-hero zoom fade-in" style="--d:2; --cover:#111B47; aspect-ratio:2000 / 1662;" type="button" data-zoom data-caption="Line Check Solver: the redesigned Reservations page" aria-label="Enlarge: redesigned Reservations page">
+        <img src="../assets/southwest/reservations.webp" alt="Redesigned Line Check Solver Reservations page. A table lists each Line Check by date, total TFP, trip route such as HOU to MSY to MDW to HOU, report and release time, duty and ground time, and status. The top reservation is expanded into three trip cards, Check 1, Deadhead and Check 2, with Cancel, Substandard and Certify buttons." width="2000" height="1662">
       </button>
 
       <!-- ============ OVERVIEW ============ -->
@@ -131,6 +131,17 @@
           <blockquote><p>“A lot of times I am done, going down the escalator, going to my car, and I’m doing this on my phone as I’m walking out.”</p></blockquote>
         </figure>
         <p>Pilots searched and compared on a laptop, but monitored and certified on a tablet or phone, so the post-trip actions had to work on small screens too.</p>
+        <figure>
+          <div class="devices">
+            <button class="zoom" type="button" data-zoom data-caption="Create New Line Check on tablet" aria-label="Enlarge: tablet layout">
+              <img src="../assets/southwest/tablet.webp" alt="Tablet layout of Create New Line Check with solution parameters and an expanded solution showing trip cards." width="1400" height="1455" loading="lazy">
+            </button>
+            <button class="zoom" type="button" data-zoom data-caption="Create New Line Check on mobile" aria-label="Enlarge: mobile layout">
+              <img src="../assets/southwest/mobile.webp" alt="Mobile layout of Create New Line Check with stacked parameter fields and solution cards." width="780" height="1690" loading="lazy">
+            </button>
+          </div>
+          <figcaption>The same flow on tablet (iEFB) and phone.</figcaption>
+        </figure>
       </section>
 
       <!-- ============ FINDINGS → DECISIONS ============ -->
@@ -138,10 +149,10 @@
         <p class="label">Design decisions · Reserve</p>
         <h3 class="block-title" id="p1-reserve">Start pilots where they almost always start.</h3>
         <figure>
-          <button class="zoom" type="button" data-zoom data-caption="Create New Line Check: solution parameters" aria-label="Enlarge: Create New Line Check parameters">
-            <img src="../assets/southwest/create-parameters.webp" alt="Create New Line Check page with empty dropdowns for date, departure station, departure time, arrival station, arrival time and max legs, annotated with findings 1 to 3." width="1600" height="1092" loading="lazy">
+          <button class="zoom" type="button" data-zoom data-caption="Create New Line Check, with smart defaults" aria-label="Enlarge: Create New Line Check with defaults">
+            <img src="../assets/southwest/create-defaults.webp" alt="Create New Line Check page with parameters pre-filled: departure station HOU, departure time 00:00, arrival station ONT, arrival time 23:30 and max legs 5. The Reserve Line Check button stays disabled until a solution is chosen." width="2000" height="1551" loading="lazy">
           </button>
-          <figcaption>Most pilots search from home base and include every hour of the day.</figcaption>
+          <figcaption>Final design: stations, all-day times, and max legs arrive pre-filled.</figcaption>
         </figure>
         <ol class="numbered" role="list">
           <li><span class="num">01</span><h4>Default stations to the last search</h4><p>Most pilots start and end at their home base.</p></li>
@@ -159,9 +170,9 @@
         <h3 class="block-title" id="p1-compare">Make the best trip obvious at a glance.</h3>
         <figure>
           <button class="zoom" type="button" data-zoom data-caption="Comparing solutions" aria-label="Enlarge: comparing solutions">
-            <img src="../assets/southwest/solutions.webp" alt="Solution results: one expanded row shows three trip cards, Check 1, a deadhead and Check 2, with flight times, block time, trip-for-pay, and the pilots being checked tagged Grace Month and Evaluator." width="1600" height="1249" loading="lazy">
+            <img src="../assets/southwest/create-results.webp" alt="Solution results after applying parameters: four collapsed rows, each showing date, total TFP, report and release time, total duty, ground time and total checks, with a yellow Reserve Line Check button." width="2000" height="1551" loading="lazy">
           </button>
-          <figcaption>Each solution expands into trip cards for every leg.</figcaption>
+          <figcaption>Final design: rows start collapsed, with Total TFP and release time up front.</figcaption>
         </figure>
         <ol class="numbered" role="list">
           <li><span class="num">01</span><h4>Lead with Total TFP and add release time</h4><p>Pilots scan pay first, then want to know when the day ends. Average TFP was dropped because no one used it.</p></li>
@@ -181,9 +192,9 @@
         <h3 class="block-title" id="p1-confirm">Put the instructions where pilots need them.</h3>
         <figure>
           <button class="zoom" type="button" data-zoom data-caption="Line Check confirmation" aria-label="Enlarge: Line Check confirmation">
-            <img src="../assets/southwest/confirmation.webp" alt="Line Check Confirmation page with a green check, a Back to Reservations link, a details summary and the three trip cards." width="1600" height="982" loading="lazy">
+            <img src="../assets/southwest/confirmation.webp" alt="Line Check Confirmation page with a green check, a Back to Reservations link, an expandable “What are the key areas of focus during a Line Check?” section, a details summary and the three trip cards." width="2000" height="1551" loading="lazy">
           </button>
-          <figcaption>The confirmation page felt like a satisfying end to the flow.</figcaption>
+          <figcaption>Final design: key areas of focus now sit right on the confirmation.</figcaption>
         </figure>
         <p>Pilots found “Back to Reservations” easily, and the confirmation page worked as an ending. One pilot looked for the Line Check “key areas of focus” here, which until then only lived in the Help Center, so we added them to the confirmation page too.</p>
       </section>
@@ -192,10 +203,15 @@
         <p class="label">Design decisions · Certify</p>
         <h3 class="block-title" id="p1-certify">Keep the easy action easy, and the serious one deliberate.</h3>
         <figure>
-          <button class="zoom" type="button" data-zoom data-caption="Certify and Substandard flows" aria-label="Enlarge: Certify and Substandard flows">
-            <img src="../assets/southwest/certify-substandard.webp" alt="Expanded reservation with Cancel, Substandard and Certify buttons on each trip card, and two dialogs: a simple Certify confirmation and a Substandard dialog that asks the pilot to type a name to confirm." width="1600" height="1509" loading="lazy">
-          </button>
-          <figcaption>Certify takes one confirmation. Substandard asks for more.</figcaption>
+          <div class="pair">
+            <button class="zoom" type="button" data-zoom data-caption="Substandard: type the word to confirm" aria-label="Enlarge: Substandard dialog">
+              <img src="../assets/southwest/modal-substandard.webp" alt="Substandard dialog: To confirm Kayla Ward’s ranking, type Substandard in the field below, with a confirmation text field and a red Substandard button." width="832" height="882" loading="lazy">
+            </button>
+            <button class="zoom" type="button" data-zoom data-caption="Certify All" aria-label="Enlarge: Certify All dialog">
+              <img src="../assets/southwest/modal-certify-all.webp" alt="Certify All dialog asking whether to certify all pilots on the reservation, listing Patricia Sanders and Kayla Ward, with a yellow Certify All button." width="832" height="878" loading="lazy">
+            </button>
+          </div>
+          <figcaption>Substandard asks you to type the word. Certify All stays one click.</figcaption>
         </figure>
         <ol class="numbered" role="list">
           <li><span class="num">01</span><h4>Type “Substandard,” not the pilot’s name</h4><p>Every pilot liked the extra friction for such a serious action. Typing a name risked typos, so the input now takes the word “Substandard” in any capitalization.</p></li>
@@ -207,22 +223,17 @@
           <blockquote><p>“I definitely won’t want to inadvertently click on something and then mark them as substandard because the gravity of that…”</p></blockquote>
         </figure>
         <figure>
-          <button class="zoom" type="button" data-zoom data-caption="Ranked states and bulk actions" aria-label="Enlarge: ranked states and bulk actions">
-            <img src="../assets/southwest/bulk-actions.webp" alt="Reservation with a green Certified state on one trip card and a red Substandard state on another, a row menu with Certify All and Cancel All, and the matching confirmation dialogs." width="1600" height="1511" loading="lazy">
+          <button class="zoom" type="button" data-zoom data-caption="A certified leg" aria-label="Enlarge: a certified leg">
+            <img src="../assets/southwest/reservations-certified.webp" alt="Reservations page where the Check 1 trip card has turned green and shows Certified on 07/28/2026 08:15 in place of its buttons." width="2000" height="1662" loading="lazy">
           </button>
-          <figcaption>Certify All was the action pilots expected to use most.</figcaption>
+          <figcaption>Once certified, the leg turns green and records when.</figcaption>
         </figure>
       </section>
 
       <!-- ============ FINAL DESIGNS ============ -->
-      <!-- EDIT: export the updated screens from your Figma file and replace these placeholders -->
       <section class="block" aria-labelledby="p1-final">
-        <p class="label">Final designs</p>
+        <p class="label">The MVP</p>
         <h3 class="block-title" id="p1-final">The recommendations, applied.</h3>
-        <figure>
-          <div class="ph" style="--ratio:16 / 10">Image · updated solutions screen</div>
-          <figcaption>[Collapsed rows, Total TFP first, release time added, “Reserve Line Check” button.]</figcaption>
-        </figure>
         <div class="features">
           <div><h4>Smart defaults</h4><p>Last-used stations, all-day times, and max legs pre-filled.</p></div>
           <div><h4>Pay and day first</h4><p>Total TFP, report and release time lead every solution.</p></div>

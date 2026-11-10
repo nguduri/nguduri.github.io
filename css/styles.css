@@ -429,6 +429,11 @@ ul[role="list"], ol[role="list"] { list-style: none; padding: 0; }
 @media (min-width: 560px) { .photo-row { grid-template-columns: 3fr 2fr 4fr; } }
 .photo-row .ph, .photo-row img { height: 100%; aspect-ratio: auto; min-height: 180px; object-fit: cover; border-radius: var(--radius); }
 
+/* case study images keep their real proportions */
+.zoom img { width: 100%; height: auto; }
+.pair { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.devices { display: grid; grid-template-columns: 1.8fr 1fr; gap: 12px; align-items: start; }
+
 /* zoomable media */
 .zoom {
   display: block; width: 100%; padding: 0; border: 0; background: none;
