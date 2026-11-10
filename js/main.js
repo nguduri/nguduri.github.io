@@ -65,7 +65,7 @@
 (() => {
   const items = document.querySelectorAll('.masonry .exp');
   const zoomButtons = document.querySelectorAll('[data-zoom]');
-  if (!items.length && !zoomButtons.length) return;
+  if (!items.length && !zoomButtons.length && !document.querySelector('[data-locked]')) return;
 
   const viewer = document.createElement('dialog');
   viewer.className = 'viewer';
@@ -105,7 +105,11 @@
   });
 
   // case-study images are already <button data-zoom>, so they just need the click
-  zoomButtons.forEach((btn) => btn.addEventListener('click', () => open(btn)));
+  // (delegated, so it also works for content revealed after unlocking a case study)
+  document.addEventListener('click', (e) => {
+    const btn = e.target.closest('[data-zoom]');
+    if (btn) open(btn);
+  });
 
   viewer.querySelector('.viewer__close').addEventListener('click', close);
   // clicking anywhere outside the image closes it; Esc works natively
@@ -115,4 +119,69 @@
     const sun = viewer.querySelector('.cursor');
     if (sun) document.body.append(sun);
   });
+})();
+
+/* ---------- Password-protected case studies ----------
+   The article content ships encrypted (see tools/protect.mjs).
+   The password derives an AES key in the browser; nothing is sent anywhere. */
+(() => {
+  const box = document.querySelector('[data-locked]');
+  if (!box) return;
+  const form = box.querySelector('[data-lock-form]');
+  const input = form.querySelector('input');
+  const btn = form.querySelector('button');
+  const msg = form.querySelector('.lock__msg');
+  const data = JSON.parse(box.querySelector('[data-cipher]').textContent);
+  const memo = `case-unlocked:${location.pathname}`;
+  const bytes = (s) => Uint8Array.from(atob(s), (c) => c.charCodeAt(0));
+
+  const decrypt = async (pw) => {
+    const base = await crypto.subtle.importKey('raw', new TextEncoder().encode(pw), 'PBKDF2', false, ['deriveKey']);
+    const key = await crypto.subtle.deriveKey(
+      { name: 'PBKDF2', salt: bytes(data.salt), iterations: data.iter, hash: 'SHA-256' },
+      base, { name: 'AES-GCM', length: 256 }, false, ['decrypt']);
+    const plain = await crypto.subtle.decrypt({ name: 'AES-GCM', iv: bytes(data.iv) }, key, bytes(data.ct));
+    return new TextDecoder().decode(plain);
+  };
+
+  const reveal = (html, moveFocus) => {
+    box.innerHTML = html;
+    box.removeAttribute('data-locked');
+    if (moveFocus) {
+      const h1 = box.querySelector('h1');
+      if (h1) { h1.tabIndex = -1; h1.focus({ preventScroll: true }); }
+    }
+  };
+
+  if (!window.crypto?.subtle) {
+    msg.textContent = 'This page needs a secure (https) connection to unlock.';
+    btn.disabled = true;
+    return;
+  }
+
+  // stay unlocked for the rest of this browser session
+  let saved = null;
+  try { saved = sessionStorage.getItem(memo); } catch {}
+  if (saved) decrypt(saved).then((html) => reveal(html, false)).catch(() => {});
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const pw = input.value.trim();
+    if (!pw) { msg.textContent = 'Enter the password to continue.'; input.focus(); return; }
+    btn.disabled = true;
+    btn.textContent = 'Unlocking…';
+    try {
+      const html = await decrypt(pw);
+      try { sessionStorage.setItem(memo, pw); } catch {}
+      reveal(html, true);
+    } catch {
+      btn.disabled = false;
+      btn.textContent = 'Unlock';
+      input.setAttribute('aria-invalid', 'true');
+      msg.textContent = 'That’s not the password. Try again.';
+      input.select();
+      form.classList.remove('is-wrong'); void form.offsetWidth; form.classList.add('is-wrong');
+    }
+  });
+  input.addEventListener('input', () => { input.removeAttribute('aria-invalid'); msg.textContent = ''; });
 })();

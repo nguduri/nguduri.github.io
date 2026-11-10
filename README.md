@@ -29,3 +29,16 @@ Then open http://localhost:8000.
 
 ## Publish with GitHub Pages
 Settings → Pages → Deploy from a branch → `main` / root.
+
+## Password-protected case study (Southwest)
+`work/project-one.html` is published **encrypted**: the page only contains scrambled text until a visitor enters the password, and nothing readable is in the page source.
+
+To edit it:
+```bash
+node tools/protect.mjs unlock <password>   # writes work/project-one.private.html (readable, not committed)
+```
+Edit `work/project-one.private.html`, then encrypt it again before committing:
+```bash
+node tools/protect.mjs lock <password>
+```
+Images and the video in `assets/southwest/` are not encrypted, so anyone with their exact URL can open them.

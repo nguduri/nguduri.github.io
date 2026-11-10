@@ -4,7 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>southwest airlines · nithya guduri</title>
-  <meta name="description" content="Redesigning Line Check Solver, the tool Southwest check pilots use to reserve, track and certify Line Checks, and testing it with 7 check pilots.">
+  <meta name="description" content="Redesigning Line Check Solver, the tool Southwest check pilots use to reserve, track and certify Line Checks. Password protected.">
+  <meta name="robots" content="noindex">
   <meta name="theme-color" content="#ECECEA">
   <link rel="icon" type="image/png" href="../assets/logo.png">
   <link rel="apple-touch-icon" href="../assets/logo.png">
@@ -29,250 +30,22 @@
   </header>
 
   <main id="main">
-    <article class="case">
-      <a class="back fade-in" href="../index.html"><span aria-hidden="true">←</span> All work</a>
-      <header class="fade-in">
-        <h1 class="case-title">Southwest Airlines – Line Check Solver</h1>
-        <p class="case-sub">Redesigning how check pilots reserve, track, and certify Line Checks.</p>
-        <dl class="case-meta">
-          <div><dt class="label">Role</dt><dd>UX Design Intern</dd></div>
-          <div><dt class="label">Timeline</dt><dd>Summer 2026</dd></div>
-          <div><dt class="label">Tools</dt><dd>Figma</dd></div>
-        </dl>
-      </header>
-
-      <button class="case-hero zoom fade-in" style="--d:2; --cover:#111B47; aspect-ratio:2000 / 1662;" type="button" data-zoom data-caption="Line Check Solver: the redesigned Reservations page" aria-label="Enlarge: redesigned Reservations page">
-        <img src="../assets/southwest/reservations.webp" alt="Redesigned Line Check Solver Reservations page. A table lists each Line Check by date, total TFP, trip route such as HOU to MSY to MDW to HOU, report and release time, duty and ground time, and status. The top reservation is expanded into three trip cards, Check 1, Deadhead and Check 2, with Cancel, Substandard and Certify buttons." width="2000" height="1662">
-      </button>
-
-      <!-- ============ OVERVIEW ============ -->
-      <section class="block" aria-labelledby="p1-overview">
-        <p class="label">Overview</p>
-        <h2 class="block-title" id="p1-overview">A refresh for a tool pilots called “long overdue.”</h2>
-        <p>Line Check Solver (LCS) is the internal tool Southwest check pilots use to reserve Line Checks: trips where they fly with and evaluate another pilot. They use it to find a trip that works, reserve it, and afterwards certify each pilot or rate them substandard.</p>
-        <p>On the Ops User Experience team, I worked on the pilot side of a redesigned LCS. We tested the prototype with 7 check pilots and turned what we saw into design changes for the MVP.</p>
-        <p class="notice">Screens use sample data. Some details are simplified for confidentiality.</p>
-      </section>
-
-      <!-- ============ MY ROLE ============ -->
-      <!-- EDIT / VERIFY: make sure these match what you personally did -->
-      <section class="block" aria-labelledby="p1-role">
-        <p class="label">My role</p>
-        <h2 class="block-title" id="p1-role">One of four on the project, alongside our UX team lead, lead researcher, and technology manager.</h2>
-        <ul class="boxes" role="list">
-          <li><h3>I owned</h3><p>[e.g. Designing the prototype flows in Figma, and turning findings into the design recommendations.]</p></li>
-          <li><h3>I partnered on</h3><p>[e.g. Running the 7 user testing sessions and synthesizing them with our lead researcher.]</p></li>
-        </ul>
-      </section>
-
-      <!-- <h2 class="part-title">Line Check Solver: Pilot Experience <span class="pill">Summer 2026</span></h2> -->
-
-      <!-- ============ PROBLEM ============ -->
-      <section class="block" aria-labelledby="p1-problem">
-        <p class="label">The problem</p>
-        <h3 class="block-title" id="p1-problem">Reserving a Line Check is a race, and every wrong click costs the trip.</h3>
-        <p>Line Check reservations open all at once, and pilots compete to grab a slot the moment one is released. In that window, the old flow worked against them:</p>
-        <ol class="numbered" role="list">
-          <li><span class="num">01</span><h4>Too much setup</h4><p>Pilots rebuilt the same search every time, even though most start and end at their home base.</p></li>
-          <li><span class="num">02</span><h4>Options that weren’t really options</h4><p>Results looked available but hid evaluator-training conflicts, so pilots had to double-check them in a separate system before committing.</p></li>
-          <li><span class="num">03</span><h4>The wrong details up front</h4><p>Pilots choose by pay and length of day, but those details weren’t where they looked first.</p></li>
-        </ol>
-      </section>
-
-      <!-- ============ RESEARCH ============ -->
-      <section class="block" aria-labelledby="p1-research">
-        <p class="label">How we tested</p>
-        <h3 class="block-title" id="p1-research">7 check pilots, one clickable prototype, 30 minutes each.</h3>
-        <p>We wanted to know if the redesign was usable, understandable, and fast enough for pilots’ real reservation mindset, and whether they’d trust it.</p>
-        <ul class="boxes" role="list">
-          <li><h4>Who</h4><p>7 check pilots, the people who reserve and run Line Checks.</p></li>
-          <li><h4>Format</h4><p>1:1 remote sessions, 30 minutes each, with screen share and think-aloud.</p></li>
-          <li><h4>Tasks</h4><p>Reserve a Line Check, review it, then certify, rate substandard, and use bulk actions.</p></li>
-          <li><h4>Interview</h4><p>Semi-structured questions on confidence, efficiency, and where each device fits.</p></li>
-        </ul>
-        <div class="stats">
-          <p class="stat"><strong>7</strong><span>check pilots tested</span></p>
-          <p class="stat"><strong>6</strong><span>screens and flows tested</span></p>
-          <p class="stat"><strong>7 / 7</strong><span>wanted unviable options removed, not flagged</span></p>
-        </div>
-      </section>
-
-      <!-- ============ THE FLOW (video) ============ -->
-      <section class="block" aria-labelledby="p1-flow">
-        <p class="label">The flow</p>
-        <h3 class="block-title" id="p1-flow">From the Reservations page to a confirmed Line Check.</h3>
-        <figure class="video">
-          <!-- EDIT: VIDEO GOES HERE
-               1. Convert the .mov so every browser can play it:
-                  ffmpeg -i flow.mov -vcodec libx264 -crf 26 -preset slow -an -movflags +faststart -vf "scale=1600:-2" lcs-flow.mp4
-               2. Save it as assets/southwest/lcs-flow.mp4
-               3. Delete the <div class="ph"> below and uncomment the <video> line. -->
-          <video src="../assets/southwest/lcs-flow.mp4" poster="../assets/southwest/reservations.webp" controls muted playsinline preload="metadata" aria-label="Screen recording of a pilot reserving a Line Check in the prototype"></video>
-          <figcaption>The prototype pilots tested: search, compare solutions, reserve, confirm.</figcaption>
-        </figure>
-      </section>
-
-      <!-- ============ KEY THEMES ============ -->
-      <section class="block" aria-labelledby="p1-themes">
-        <p class="label">What we learned</p>
-        <h3 class="block-title" id="p1-themes">Three themes shaped every design decision.</h3>
-        <ol class="numbered" role="list">
-          <li><span class="num">01</span><h4>Build for time-critical decisions</h4><p>Pilots race for slots, so the flow should run on smart defaults and as few steps as possible.</p></li>
-          <li><span class="num">02</span><h4>Only show viable solutions</h4><p>Every participant asked us to hide options with conflicts instead of making them verify each one elsewhere. Invalid options made the whole tool feel unreliable.</p></li>
-          <li><span class="num">03</span><h4>Surface pay and day details</h4><p>Pilots compare trips by total trip-for-pay, duty day, report and release time, and ground time. Those belong first, in that order.</p></li>
-        </ol>
-        <figure class="quote">
-          <figcaption class="quote__who">P2<span>on booking from a laptop</span></figcaption>
-          <blockquote><p>“I tend to use my laptop, [because reservations are] so hard to get. I like the fastest, easiest way to click, and that’s my laptop.”</p></blockquote>
-        </figure>
-        <figure class="quote">
-          <figcaption class="quote__who">P5<span>on finishing up from a phone</span></figcaption>
-          <blockquote><p>“A lot of times I am done, going down the escalator, going to my car, and I’m doing this on my phone as I’m walking out.”</p></blockquote>
-        </figure>
-        <p>Pilots searched and compared on a laptop, but monitored and certified on a tablet or phone, so the post-trip actions had to work on small screens too.</p>
-        <figure>
-          <div class="devices">
-            <button class="zoom" type="button" data-zoom data-caption="Create New Line Check on tablet" aria-label="Enlarge: tablet layout">
-              <img src="../assets/southwest/tablet.webp" alt="Tablet layout of Create New Line Check with solution parameters and an expanded solution showing trip cards." width="1400" height="1455" loading="lazy">
-            </button>
-            <button class="zoom" type="button" data-zoom data-caption="Create New Line Check on mobile" aria-label="Enlarge: mobile layout">
-              <img src="../assets/southwest/mobile.webp" alt="Mobile layout of Create New Line Check with stacked parameter fields and solution cards." width="780" height="1690" loading="lazy">
-            </button>
+    <article class="case" data-locked>
+      <a class="back" href="../index.html"><span aria-hidden="true">←</span> All work</a>
+      <div class="lock fade-in">
+        <span class="lock__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="4" y="10" width="16" height="11" rx="2.5"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></span>
+        <h1 class="lock__title">Southwest Airlines – Line Check Solver</h1>
+        <p class="lock__text">This case study is password protected. <a href="mailto:nithyaguduri@gmail.com">Email me</a> for access.</p>
+        <form class="lock__form" data-lock-form novalidate>
+          <label class="label" for="case-password">Password</label>
+          <div class="lock__row">
+            <input class="lock__input" id="case-password" name="password" type="password" autocomplete="current-password" required>
+            <button class="lock__btn" type="submit">Unlock</button>
           </div>
-          <figcaption>The same flow on tablet (EFB) and phone.</figcaption>
-        </figure>
-      </section>
-
-      <!-- ============ FINDINGS → DECISIONS ============ -->
-      <section class="block" aria-labelledby="p1-reserve">
-        <p class="label">Design decisions · Reserve</p>
-        <h3 class="block-title" id="p1-reserve">Start pilots where they almost always start.</h3>
-        <figure>
-          <button class="zoom" type="button" data-zoom data-caption="Create New Line Check, with smart defaults" aria-label="Enlarge: Create New Line Check with defaults">
-            <img src="../assets/southwest/create-defaults.webp" alt="Create New Line Check page with parameters pre-filled: departure station HOU, departure time 00:00, arrival station ONT, arrival time 23:30 and max legs 5. The Reserve Line Check button stays disabled until a solution is chosen." width="2000" height="1551" loading="lazy">
-          </button>
-          <figcaption>Final design: stations, all-day times, and max legs arrive pre-filled.</figcaption>
-        </figure>
-        <ol class="numbered" role="list">
-          <li><span class="num">01</span><h4>Default stations to the last search</h4><p>Most pilots start and end at their home base.</p></li>
-          <li><span class="num">02</span><h4>Default times to 00:00 – 23:30, with time zones</h4><p>Pilots include all hours to get the most solutions, and wanted to know whether times were Herb (Dallas) time or local.</p></li>
-          <li><span class="num">03</span><h4>Default Max Legs to the highest option</h4><p>More legs means more pay in a single day, so that’s what pilots picked.</p></li>
-        </ol>
-        <figure class="quote">
-          <figcaption class="quote__who">P1</figcaption>
-          <blockquote><p>“It would be nice like if it just remembers whatever your last one was because for 99% of the time, that’s what we’re going to do just about every time.”</p></blockquote>
-        </figure>
-      </section>
-
-      <section class="block" aria-labelledby="p1-compare">
-        <p class="label">Design decisions · Compare</p>
-        <h3 class="block-title" id="p1-compare">Make the best trip obvious at a glance.</h3>
-        <figure>
-          <button class="zoom" type="button" data-zoom data-caption="Comparing solutions" aria-label="Enlarge: comparing solutions">
-            <img src="../assets/southwest/create-results.webp" alt="Solution results after applying parameters: four collapsed rows, each showing date, total TFP, report and release time, total duty, ground time and total checks, with a yellow Reserve Line Check button." width="2000" height="1551" loading="lazy">
-          </button>
-          <figcaption>Final design: rows start collapsed, with Total TFP and release time up front.</figcaption>
-        </figure>
-        <ol class="numbered" role="list">
-          <li><span class="num">01</span><h4>Lead with Total TFP and add release time</h4><p>Pilots scan pay first, then want to know when the day ends. Average TFP was dropped because no one used it.</p></li>
-          <li><span class="num">02</span><h4>Collapse every row by default</h4><p>Pilots compare top-level numbers before drilling in, so auto-expanding the first solution got in the way.</p></li>
-          <li><span class="num">03</span><h4>Cut the duplicate flight time</h4><p>Block time already covered it, so details stay grouped with the TFP.</p></li>
-          <li><span class="num">04</span><h4>Handle evaluator conflicts</h4><p>Ideally, exclude solutions where the evaluator is actively training. For the MVP, add an “Actively Training” tag next to “Evaluator.”</p></li>
-          <li><span class="num">05</span><h4>Rename “Create Line Check” to “Reserve Line Check”</h4><p>Pilots felt picking parameters was the “create” step, so the final button read as unclear.</p></li>
-        </ol>
-        <figure class="quote">
-          <figcaption class="quote__who">P3<span>on the Evaluator tag</span></figcaption>
-          <blockquote><p>“If they are performing any kind of training that prevents us from doing a line check, it shouldn’t show up as a possible solution.”</p></blockquote>
-        </figure>
-      </section>
-
-      <section class="block" aria-labelledby="p1-confirm">
-        <p class="label">Design decisions · Confirm</p>
-        <h3 class="block-title" id="p1-confirm">Put the instructions where pilots need them.</h3>
-        <figure>
-          <button class="zoom" type="button" data-zoom data-caption="Line Check confirmation" aria-label="Enlarge: Line Check confirmation">
-            <img src="../assets/southwest/confirmation.webp" alt="Line Check Confirmation page with a green check, a Back to Reservations link, an expandable “What are the key areas of focus during a Line Check?” section, a details summary and the three trip cards." width="2000" height="1551" loading="lazy">
-          </button>
-          <figcaption>Final design: key areas of focus now sit right on the confirmation.</figcaption>
-        </figure>
-        <p>Pilots found “Back to Reservations” easily, and the confirmation page worked as an ending. One pilot looked for the Line Check “key areas of focus” here, which until then only lived in the Help Center, so we added them to the confirmation page too.</p>
-      </section>
-
-      <section class="block" aria-labelledby="p1-certify">
-        <p class="label">Design decisions · Certify</p>
-        <h3 class="block-title" id="p1-certify">Keep the easy action easy, and the serious one deliberate.</h3>
-        <figure>
-          <div class="pair">
-            <button class="zoom" type="button" data-zoom data-caption="Substandard: type the word to confirm" aria-label="Enlarge: Substandard dialog">
-              <img src="../assets/southwest/modal-substandard.webp" alt="Substandard dialog: To confirm Kayla Ward’s ranking, type Substandard in the field below, with a confirmation text field and a red Substandard button." width="832" height="882" loading="lazy">
-            </button>
-            <button class="zoom" type="button" data-zoom data-caption="Certify All" aria-label="Enlarge: Certify All dialog">
-              <img src="../assets/southwest/modal-certify-all.webp" alt="Certify All dialog asking whether to certify all pilots on the reservation, listing Patricia Sanders and Kayla Ward, with a yellow Certify All button." width="832" height="878" loading="lazy">
-            </button>
-          </div>
-          <figcaption>Substandard asks you to type the word. Certify All stays one click.</figcaption>
-        </figure>
-        <ol class="numbered" role="list">
-          <li><span class="num">01</span><h4>Type “Substandard,” not the pilot’s name</h4><p>Every pilot liked the extra friction for such a serious action. Typing a name risked typos, so the input now takes the word “Substandard” in any capitalization.</p></li>
-          <li><span class="num">02</span><h4>Stop asking pilots to complete deadheads</h4><p>Pilots liked that deadheads no longer needed an action. Since it’s a process change, a Help Center FAQ explains it.</p></li>
-          <li><span class="num">03</span><h4>Confirm the result with a toast</h4><p>Pilots understood the colored certified and substandard states, but some expected one more step. A page-level toast makes it clear they’re done.</p></li>
-        </ol>
-        <figure class="quote">
-          <figcaption class="quote__who">P5</figcaption>
-          <blockquote><p>“I definitely won’t want to inadvertently click on something and then mark them as substandard because the gravity of that…”</p></blockquote>
-        </figure>
-        <figure>
-          <button class="zoom" type="button" data-zoom data-caption="A certified leg" aria-label="Enlarge: a certified leg">
-            <img src="../assets/southwest/reservations-certified.webp" alt="Reservations page where the Check 1 trip card has turned green and shows Certified on 07/28/2026 08:15 in place of its buttons." width="2000" height="1662" loading="lazy">
-          </button>
-          <figcaption>Once certified, the leg turns green and records when.</figcaption>
-        </figure>
-      </section>
-
-      <!-- ============ FINAL DESIGNS ============ -->
-      <section class="block" aria-labelledby="p1-final">
-        <p class="label">The MVP</p>
-        <h3 class="block-title" id="p1-final">The recommendations, applied.</h3>
-        <div class="features">
-          <div><h4>Smart defaults</h4><p>Last-used stations, all-day times, and max legs pre-filled.</p></div>
-          <div><h4>Pay and day first</h4><p>Total TFP, report and release time lead every solution.</p></div>
-          <div><h4>Safer substandard</h4><p>Type “Substandard” to confirm, in any capitalization.</p></div>
-          <div><h4>Help in context</h4><p>Key areas of focus on the confirmation page, not just the FAQ.</p></div>
-        </div>
-      </section>
-
-      <!-- ============ OUTCOME ============ -->
-      <section class="block" aria-labelledby="p1-outcome">
-        <p class="label">Outcome</p>
-        <h3 class="block-title" id="p1-outcome">“We’re on the right track.”</h3>
-        <p>Pilots’ overall sentiment was strongly positive. Our recommendations went to the product leads to decide what made the MVP, and pilots’ bigger requests became the roadmap: resolving reservation conflicts in the flow, checking crew legalities automatically, cross-referencing their schedule, and “Recommended for You” solutions.</p>
-        <figure class="quote">
-          <figcaption class="quote__who">P1</figcaption>
-          <blockquote><p>“I really appreciate you guys working on this because it is something that was probably long overdue to get a refresh.”</p></blockquote>
-        </figure>
-        <figure class="quote">
-          <figcaption class="quote__who">P4</figcaption>
-          <blockquote><p>“I’m happy with it. I really think the functionality’s nice … It’s a beautiful, elegant solution.”</p></blockquote>
-        </figure>
-      </section>
-
-      <hr class="rule">
-
-      <!-- EDIT: make these lessons your own -->
-      <section class="block" aria-labelledby="p1-reflect">
-        <p class="label">Reflection</p>
-        <h3 class="sr-only" id="p1-reflect">Reflection</h3>
-        <ol class="numbered" role="list">
-          <li><span class="num">01</span><h4>Design for the moment of use</h4><p>Knowing that reservations are a race changed what “good” meant. Fewer fields and smart defaults mattered more than any visual polish.</p></li>
-          <li><span class="num">02</span><h4>Remove choices instead of explaining them</h4><p>An option that looks available but isn’t costs more trust than no option at all. Every pilot asked us to hide conflicts, not label them.</p></li>
-          <li><span class="num">03</span><h4>Friction can be a feature</h4><p>For a high-stakes action like rating a pilot substandard, pilots wanted the extra step. The job was making that step safe, not removing it.</p></li>
-        </ol>
-      </section>
-
-      <a class="next" href="project-two.html">
-        <span><span class="label">Next project</span><br><span class="next__title">DallyDeck</span></span>
-        <span class="next__arrow" aria-hidden="true">→</span>
-      </a>
+          <p class="lock__msg" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+      <script type="application/json" data-cipher>{"v":1,"iter":310000,"salt":"Og27y0V4ERqgmhTU8+tegw==","iv":"xUank/xifpYOWnAs","ct":"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"}</script>
     </article>
   </main>
 
