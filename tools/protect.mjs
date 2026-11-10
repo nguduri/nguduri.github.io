@@ -30,15 +30,12 @@ async function key(pw, salt) {
     base, { name: 'AES-GCM', length: 256 }, false, ['encrypt', 'decrypt']);
 }
 
-const LOCK_ICON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="4" y="10" width="16" height="11" rx="2.5"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>';
-
 function lockScreen(title, payload) {
   return `
       <a class="back" href="../index.html"><span aria-hidden="true">←</span> All work</a>
       <div class="lock fade-in">
-        <span class="lock__icon">${LOCK_ICON}</span>
         <h1 class="lock__title">${title}</h1>
-        <p class="lock__text">This case study is password protected. <a href="mailto:nithyaguduri@gmail.com">Email me</a> for access.</p>
+        <p class="lock__text">This case study is password protected. Check my resume or <a href="mailto:nithyaguduri@gmail.com">reach out</a> for access.</p>
         <form class="lock__form" data-lock-form novalidate>
           <label class="label" for="case-password">Password</label>
           <div class="lock__row">
@@ -56,7 +53,8 @@ if (cmd === 'lock') {
   const src = await readFile(PRIVATE, 'utf8');
   const m = src.match(ARTICLE);
   if (!m) throw new Error(`no <article class="case"> in ${PRIVATE}`);
-  const title = (m[2].match(/<h1[^>]*>([\s\S]*?)<\/h1>/) || [, 'Case study'])[1].trim();
+  const h1 = (m[2].match(/<h1[^>]*>([\s\S]*?)<\/h1>/) || [, 'Case study'])[1].trim();
+  const title = h1.split(' – ')[0];   // "Southwest Airlines – Line Check Solver" → "Southwest Airlines"
   const salt = crypto.getRandomValues(new Uint8Array(16));
   const iv = crypto.getRandomValues(new Uint8Array(12));
   const ct = await crypto.subtle.encrypt({ name: 'AES-GCM', iv }, await key(password, salt), new TextEncoder().encode(m[2]));

@@ -651,15 +651,10 @@ html.has-cursor, html.has-cursor * { cursor: none !important; }
   max-width: 440px; margin: clamp(48px, 10vh, 120px) auto clamp(64px, 12vh, 160px);
   text-align: center;
 }
-.lock__icon {
-  display: grid; place-items: center;
-  width: 56px; height: 56px; border-radius: 50%;
-  background: var(--accent-soft); color: var(--accent);
-}
-.lock__icon svg { width: 26px; height: 26px; }
 .lock__title { font-size: var(--fs-xl); font-weight: 500; line-height: 1.15; letter-spacing: -.02em; color: var(--ink); text-wrap: balance; }
 .lock__text { color: var(--muted); }
-.lock__text a { color: var(--accent); font-weight: 500; }
+.lock__text a { color: var(--accent); font-weight: 500; text-decoration: none; text-underline-offset: 3px; }
+.lock__text a:hover, .lock__text a:focus-visible { text-decoration: underline; }
 .lock__form { display: grid; gap: 8px; width: 100%; margin-top: 10px; text-align: left; }
 .lock__row { display: flex; gap: 8px; }
 .lock__input {
