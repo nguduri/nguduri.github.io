@@ -235,6 +235,89 @@ ul[role="list"], ol[role="list"] { list-style: none; padding: 0; }
   .dd-card:nth-child(3) { transform: translate(16%, -3%) rotate(9deg); z-index: 1; }
 }
 
+/* Southwest cover: a plane flies the trip, each check leg certifies, the reservation confirms */
+.sw-scene {
+  position: absolute; inset: 0;
+  container-type: size;
+  display: grid; place-items: center;
+  background: radial-gradient(circle at 50% 125%, rgba(61, 107, 224, .5), transparent 62%), #111B47;
+}
+.sw-board {
+  width: min(80%, 178cqh);
+  display: grid; gap: 4cqh;
+  padding: 6cqh 6cqh 7cqh;
+  border-radius: 3cqh;
+  background: #F7F8FC;
+  box-shadow: 0 3cqh 7cqh -2cqh rgba(0, 0, 0, .55);
+}
+.sw-route { position: relative; height: 8cqh; margin: 0 3cqh 5cqh; }
+.sw-path { position: absolute; left: 0; right: 0; top: 50%; border-top: .5cqh dashed #A9B6E6; }
+.sw-stop {
+  position: absolute; top: 50%; translate: -50% -50%;
+  width: 2.6cqh; height: 2.6cqh; border-radius: 50%;
+  background: #fff; border: .6cqh solid #2645D6;
+}
+.sw-stop:nth-of-type(1) { left: 0; }
+.sw-stop:nth-of-type(2) { left: 33.333%; }
+.sw-stop:nth-of-type(3) { left: 66.667%; }
+.sw-stop:nth-of-type(4) { left: 100%; }
+.sw-stop::after {
+  content: attr(data-code);
+  position: absolute; top: 3.4cqh; left: 50%; translate: -50% 0;
+  font: 600 3.3cqh/1 var(--font); letter-spacing: .04em; color: #111B47;
+}
+.sw-track { position: absolute; inset: 0; animation: sw-fly 8s var(--ease) infinite; }
+.sw-plane {
+  position: absolute; left: 0; top: 50%;
+  width: 8cqh; height: 8cqh;
+  translate: -50% -50%; rotate: 90deg;
+  color: #F5B819;
+  filter: drop-shadow(0 .4cqh .6cqh rgba(17, 27, 71, .35));
+  animation: sw-plane 8s linear infinite;
+}
+.sw-legs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3cqh; }
+.sw-leg {
+  display: grid; gap: 2cqh; padding-bottom: 3cqh;
+  border-radius: 1.5cqh; overflow: hidden;
+  background: #fff; box-shadow: 0 0 0 .3cqh #E1E5F2;
+}
+.sw-leg b { height: 3.4cqh; background: #2645D6; }
+.sw-leg--dh b { background: #5B6478; }
+.sw-leg i { height: 2cqh; margin-inline: 2.5cqh; border-radius: 99px; background: #E3E7F3; }
+.sw-leg i + i { width: 55%; }
+.sw-leg:nth-child(1) b { animation: sw-cert-first 8s infinite; }
+.sw-leg:nth-child(3) b { animation: sw-cert-last 8s infinite; }
+.sw-toast {
+  position: absolute; bottom: 8cqh; left: 50%; translate: -50% 0;
+  padding: 2.2cqh 4.4cqh; border-radius: 99px;
+  background: #F5B819; color: #111B47;
+  font: 600 3.6cqh/1 var(--font); white-space: nowrap;
+  box-shadow: 0 2cqh 4cqh -1.5cqh rgba(0, 0, 0, .45);
+  animation: sw-toast 8s var(--ease) infinite;
+}
+@keyframes sw-fly {
+  0%, 6%    { transform: translateX(0); }
+  22%, 30%  { transform: translateX(33.333%); }
+  46%, 54%  { transform: translateX(66.667%); }
+  70%, 100% { transform: translateX(100%); }
+}
+@keyframes sw-plane { 0% { opacity: 0; } 4%, 90% { opacity: 1; } 97%, 100% { opacity: 0; } }
+@keyframes sw-cert-first { 0%, 20% { background: #2645D6; } 25%, 92% { background: #2E9E5B; } 100% { background: #2645D6; } }
+@keyframes sw-cert-last  { 0%, 68% { background: #2645D6; } 73%, 92% { background: #2E9E5B; } 100% { background: #2645D6; } }
+@keyframes sw-toast {
+  0%, 72%  { opacity: 0; transform: translateY(40%); }
+  78%, 92% { opacity: 1; transform: none; }
+  100%     { opacity: 0; transform: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .sw-track, .sw-plane, .sw-leg b, .sw-toast { animation: none; }
+  .sw-track { transform: translateX(100%); }
+  .sw-leg:nth-child(1) b, .sw-leg:nth-child(3) b { background: #2E9E5B; }
+}
+
+/* case study video */
+.video video { display: block; width: 100%; height: auto; border-radius: var(--radius); background: #111; }
+
 /* cover mocks (placeholders) */
 .mock-center { position: absolute; inset: 0; display: grid; place-items: center; }
 .mock-screen {

@@ -40,16 +40,30 @@
       <ul class="work-grid" role="list">
         <li class="work-item work-item--feature fade-in" style="--d:1">
           <a class="work-card" href="work/project-one.html">
-            <div class="work-card__cover" style="--cover:#0E1628" aria-hidden="true">
-              <!-- EDIT: replace with <img src="assets/…" alt=""> -->
-              <div class="mock-center"><div class="mock-screen"><div class="mock-screen__bar"></div><div class="mock-screen__body"><i></i><i></i><i></i></div></div></div>
+            <div class="work-card__cover" style="--cover:#111B47" aria-hidden="true">
+              <!-- animated trip: a plane flies each leg, legs turn green as they're certified, then the reservation confirms -->
+              <div class="sw-scene">
+                <div class="sw-board">
+                  <div class="sw-route">
+                    <i class="sw-path"></i>
+                    <span class="sw-stop" data-code="HOU"></span><span class="sw-stop" data-code="MSY"></span><span class="sw-stop" data-code="MDW"></span><span class="sw-stop" data-code="HOU"></span>
+                    <div class="sw-track"><svg class="sw-plane" viewBox="0 0 24 24"><path fill="currentColor" d="M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5z"/></svg></div>
+                  </div>
+                  <div class="sw-legs">
+                    <div class="sw-leg"><b></b><i></i><i></i></div>
+                    <div class="sw-leg sw-leg--dh"><b></b><i></i><i></i></div>
+                    <div class="sw-leg"><b></b><i></i><i></i></div>
+                  </div>
+                </div>
+                <span class="sw-toast">✓ Line Check reserved</span>
+              </div>
             </div>
             <div class="work-card__meta">
               <h2 class="work-card__title">Southwest Airlines</h2>
               <span class="pill"><span class="sr-only">Year: </span>2026</span>
             </div>
             <!-- EDIT: one-line tagline, shown on hover -->
-            <p class="work-card__tagline">Designing an AI assistant that helps teams ship faster.</p>
+            <p class="work-card__tagline">Redesigning how Southwest check pilots reserve and certify Line Checks.</p>
           </a>
         </li>
         <li class="work-item fade-in" style="--d:2">
