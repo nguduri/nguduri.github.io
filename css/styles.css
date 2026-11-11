@@ -318,77 +318,62 @@ ul[role="list"], ol[role="list"] { list-style: none; padding: 0; }
 /* case study video */
 .video video { display: block; width: 100%; height: auto; border-radius: var(--radius); background: #111; }
 
-/* Yoka cover: a little site whose nav flips between the menu and the gallery */
+/* Yoka cover: the shop's paper menu, then the new website appears beside it */
 .yk-scene {
   position: absolute; inset: 0;
   container-type: size;
-  display: grid; place-items: center;
   background: radial-gradient(circle at 50% 120%, rgba(246, 239, 225, .22), transparent 62%), #161514;
+  overflow: hidden;
 }
-.yk-window {
-  width: min(80%, 150cqh); height: 70cqh;
-  display: grid; grid-template-rows: auto auto 1fr;
-  border-radius: 2.6cqh; overflow: hidden;
-  background: #F6EFE1;
-  box-shadow: 0 3cqh 7cqh -2cqh rgba(0, 0, 0, .6);
+.yk-paper, .yk-site { position: absolute; left: 50%; top: 50%; }
+/* paper menu */
+.yk-paper {
+  width: 46cqh; height: 58cqh;
+  display: grid; align-content: start; gap: 5cqh;
+  padding: 6cqh 5cqh;
+  border-radius: 1cqh; background: #F6EFE1;
+  box-shadow: 0 2.5cqh 5cqh -1.5cqh rgba(0, 0, 0, .6);
+  animation: yk-paper 8s var(--ease) infinite;
 }
-.yk-bar { display: flex; gap: 1.2cqh; padding: 2.2cqh 2.6cqh 0; }
-.yk-bar i { width: 1.8cqh; height: 1.8cqh; border-radius: 50%; background: #D8CFBD; }
-.yk-nav { display: flex; align-items: center; justify-content: space-between; padding: 2.4cqh 4cqh 2cqh; }
-.yk-brand { width: 13cqh; height: 4cqh; border-radius: 99px; background: #111; }
-.yk-tabs {
-  position: relative; display: grid; grid-template-columns: 1fr 1fr;
-  padding: .8cqh; border-radius: 99px; background: #111;
+.yk-paper b { justify-self: center; width: 50%; height: 3.4cqh; border-radius: 99px; background: #111; }
+.yk-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 4cqh; }
+.yk-cols span { display: grid; gap: 3cqh; }
+.yk-cols i { height: 1.8cqh; border-radius: 99px; background: #9A9184; }
+.yk-cols i:nth-child(2n) { width: 75%; }
+/* website */
+.yk-site {
+  width: 92cqh; height: 62cqh;
+  display: grid; grid-template-rows: auto auto 1fr auto; gap: 3cqh;
+  padding: 2.4cqh 3.6cqh 3.6cqh;
+  border-radius: 2cqh; background: #F6EFE1;
+  box-shadow: 0 3cqh 6cqh -2cqh rgba(0, 0, 0, .6);
+  animation: yk-site 8s var(--ease) infinite;
 }
-.yk-tabs span {
-  position: relative; z-index: 1;
-  padding: 1.1cqh 2.6cqh; text-align: center;
-  font: 600 3.2cqh/1 ui-monospace, "SF Mono", Menlo, monospace; color: #F6EFE1;
-  animation: yk-tab-a 8s var(--ease) infinite;
+.yk-bar { display: flex; gap: 1cqh; }
+.yk-bar i { width: 1.6cqh; height: 1.6cqh; border-radius: 50%; background: #D8CFBD; }
+.yk-nav { display: flex; justify-content: space-between; align-items: center; }
+.yk-nav i { width: 12cqh; height: 3.6cqh; border-radius: 99px; background: #111; }
+.yk-nav b { width: 30cqh; height: 4.4cqh; border-radius: 99px; background: #111; }
+.yk-hero { border-radius: 1.4cqh; background: #A98BE0; animation: yk-in 8s var(--ease) infinite; }
+.yk-tiles { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.4cqh; }
+.yk-tiles i { height: 10cqh; border-radius: 1.2cqh; background: #E9837C; animation: yk-in 8s var(--ease) infinite; }
+.yk-tiles i:nth-child(2) { background: #86A85A; animation-delay: .15s; }
+.yk-tiles i:nth-child(3) { background: #EBD65E; animation-delay: .3s; }
+@keyframes yk-paper {
+  0%, 30%   { transform: translate(-50%, -50%) rotate(-3deg); }
+  46%, 88%  { transform: translate(calc(-50% - 48cqh), -50%) rotate(-7deg) scale(.86); }
+  100%      { transform: translate(-50%, -50%) rotate(-3deg); }
 }
-.yk-tabs span + span { animation-name: yk-tab-b; }
-.yk-ind {
-  position: absolute; left: .8cqh; top: .8cqh; bottom: .8cqh; width: calc(50% - .8cqh);
-  border-radius: 99px; background: #F6EFE1;
-  animation: yk-ind 8s var(--ease) infinite;
+@keyframes yk-site {
+  0%, 34%   { transform: translate(calc(-50% + 70cqh), -50%) scale(.94); opacity: 0; }
+  50%, 86%  { transform: translate(calc(-50% + 26cqh), -50%); opacity: 1; }
+  94%, 100% { transform: translate(calc(-50% + 26cqh), -50%); opacity: 0; }
 }
-.yk-view { overflow: hidden; margin: 0 4cqh 4cqh; }
-.yk-track { display: flex; width: 200%; height: 100%; animation: yk-track 8s var(--ease) infinite; }
-.yk-page { width: 50%; height: 100%; flex: none; }
-.yk-menu.yk-page { width: calc(50% - 1.5cqh); margin-right: 1.5cqh; }   /* keeps its border out of view on the gallery */
-/* menu: two columns of items, like the printed menu board */
-.yk-menu {
-  position: relative;
-  display: grid; grid-template-columns: 1fr 1fr; gap: 5cqh;
-  padding: 4cqh 4.5cqh; border: .5cqh solid #111; border-radius: 1cqh;
-}
-.yk-col { display: grid; align-content: start; gap: 2.4cqh; }
-.yk-col b { width: 45%; height: 2.6cqh; border-radius: 99px; background: #111; margin-bottom: .6cqh; }
-.yk-col b:not(:first-child) { margin-top: 2cqh; }
-.yk-col i { display: flex; justify-content: space-between; height: 2cqh; border-radius: 99px; background: linear-gradient(90deg, #8F877A 0 62%, transparent 62% 80%, #8F877A 80%); }
-.yk-hl {
-  position: absolute; left: 3cqh; width: calc(50% - 5.5cqh); height: 3.6cqh; top: 10.2cqh;
-  border-radius: 99px; background: rgba(169, 139, 224, .45);
-  animation: yk-hl 8s var(--ease) infinite;
-}
-/* gallery: a collage of customer photos */
-.yk-gallery { display: grid; grid-template-columns: 1.3fr 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 1.8cqh; }
-.yk-gallery i { border-radius: 1.2cqh; background: var(--c); animation: yk-pop 8s var(--ease) infinite; }
-.yk-gallery i:nth-child(1) { grid-row: span 2; }
-.yk-gallery i:nth-child(2) { animation-delay: .1s; }
-.yk-gallery i:nth-child(3) { animation-delay: .2s; }
-.yk-gallery i:nth-child(4) { animation-delay: .3s; }
-.yk-gallery i:nth-child(5) { animation-delay: .4s; }
-@keyframes yk-ind   { 0%, 44% { transform: none; } 52%, 92% { transform: translateX(100%); } 100% { transform: none; } }
-@keyframes yk-tab-a { 0%, 44% { color: #111; } 50%, 94% { color: #F6EFE1; } 100% { color: #111; } }
-@keyframes yk-tab-b { 0%, 46% { color: #F6EFE1; } 52%, 92% { color: #111; } 98%, 100% { color: #F6EFE1; } }
-@keyframes yk-track { 0%, 46% { transform: none; } 54%, 92% { transform: translateX(-50%); } 100% { transform: none; } }
-@keyframes yk-hl    { 0%, 6% { top: 9.3cqh; opacity: 0; } 10%, 16% { top: 9.3cqh; opacity: 1; } 22%, 28% { top: 13.7cqh; } 34%, 40% { top: 18.1cqh; opacity: 1; } 46%, 100% { top: 18.1cqh; opacity: 0; } }
-@keyframes yk-pop   { 0%, 52% { transform: scale(.88); opacity: 0; } 60%, 92% { transform: none; opacity: 1; } 100% { transform: none; opacity: 0; } }
+@keyframes yk-in { 0%, 50% { opacity: 0; transform: scale(.94); } 58%, 100% { opacity: 1; transform: none; } }
 @media (prefers-reduced-motion: reduce) {
-  .yk-tabs span, .yk-ind, .yk-track, .yk-hl, .yk-gallery i { animation: none; }
-  .yk-tabs span:first-of-type { color: #111; }
-  .yk-hl { opacity: 0; }
+  .yk-paper, .yk-site, .yk-hero, .yk-tiles i { animation: none; }
+  .yk-paper { transform: translate(calc(-50% - 48cqh), -50%) rotate(-7deg) scale(.86); }
+  .yk-site { transform: translate(calc(-50% + 26cqh), -50%); }
 }
 
 /* cover mocks (placeholders) */
