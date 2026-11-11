@@ -32,7 +32,7 @@ async function key(pw, salt) {
 
 function lockScreen(title, payload) {
   return `
-      <a class="back" href="../index.html"><span aria-hidden="true">←</span> All work</a>
+      <a class="back" href="/"><span aria-hidden="true">←</span> All work</a>
       <div class="lock fade-in">
         <h1 class="lock__title">${title}</h1>
         <p class="lock__text">This case study is password protected. Check my resume or <a href="mailto:nithyaguduri@gmail.com">reach out</a> for access.</p>

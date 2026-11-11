@@ -21,11 +21,15 @@ Plain HTML, CSS and JS. No build step and no dependencies.
 - **Project covers** on the Work page: replace the mock inside `.work-card__cover` with an `<img>`.
 - **Adding a project:** copy a `<li>` in `index.html` and a file in `work/`, then update the "Next project" links.
 
+## Links and addresses
+Pages are linked without `.html` (`/about`, `/play`, `/work/project-one`). GitHub Pages serves `about.html` at `/about` automatically. When adding a link, use the same style: `href="/about"`, not `about.html`.
+
 ## Preview locally
+Use a server that understands addresses without `.html` (double-clicking a file won't follow links between pages):
 ```bash
-python3 -m http.server 8000
+npx serve
 ```
-Then open http://localhost:8000.
+Then open the address it prints, usually http://localhost:3000.
 
 ## Publish with GitHub Pages
 Settings → Pages → Deploy from a branch → `main` / root.
